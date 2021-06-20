@@ -1,0 +1,127 @@
+#links {
+  display: flex;
+  column-gap: 0.75em;
+  margin-top: .2em;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: Slide-in 1s backwards;
+  }
+
+  svg {
+    height: 0.9em;
+    fill: whitesmoke;
+    float: left;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      fill: coral;
+      transition: 0.1s;
+    }
+  }
+}
+
+.Name-header {
+  color: coral;
+  user-select: none;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: Fade-in 1.2s;
+  }
+  /* animation: Title-focus 2s infinite alternate ease-in-out; */
+}
+
+:root {
+  background-color: #282c34;
+}
+
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-jump 0.35s infinite alternate,
+      App-logo-spin 0.7s infinite alternate ease-in-out;
+
+    position: relative;
+    height: 7em;
+  }
+}
+
+.App-header {
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  margin: 25vh 2em;
+
+  /* animation: Fade-from-black 2s; */
+}
+
+@keyframes Bloat-out {
+  50% {
+    size: 500%;
+  }
+  100% {
+  }
+}
+
+@keyframes Fade-from-black {
+  from {
+    filter: brightness(0);
+  }
+  to {
+  }
+}
+
+// .Slide-apart-vertical > * {
+//   animation: Slide-apart-vertical 5s both;
+// }
+
+// @keyframes Slide-apart-vertical {
+//   to {
+//     margin: 1em auto;
+//   }
+// }
+
+@keyframes Slide-in {
+  from {
+    column-gap: 0.2em;
+    // transform: translateX(1em);
+  }
+}
+
+@keyframes Fade-in {
+  from {
+    opacity: 0%;
+  }
+}
+
+.App-logo {
+  align-self: center;
+  block-size: 7em;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes App-logo-jump {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 80px;
+  }
+}
+
+@keyframes App-logo-spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(300deg);
+  }
+}
