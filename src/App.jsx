@@ -2,6 +2,8 @@
 import logo from "./content/logo.svg";
 import React from "react";
 import { GitHubLogo, TwitterLogo, YoutubeLogo } from "./content/SVGlogos";
+import Canvas from "components/Canvas";
+import { draw } from "scripts/DustParticles";
 
 let links = {
   github: "https://github.com/PlayCreatively",
@@ -11,8 +13,11 @@ let links = {
 
 function App() {
   return (
-    <div className="App Scroll-bar">
-      <header className="App-header" style={{ flexDirection: "row" }}>
+    <div className="App Scroll-bar" style={{ position: "relative" }}>
+      <header
+        className="App-header"
+        style={{ flexDirection: "row", position: "relative" }}
+      >
         <div
           style={{
             flexDirection: "column",
@@ -36,6 +41,7 @@ function App() {
         </div>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
+      <Canvas id="bg" draw={draw} />
     </div>
   );
 }

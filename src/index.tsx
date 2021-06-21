@@ -4,6 +4,8 @@ import "./styles/index/index.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Canvas from "components/Canvas";
+import { draw } from "scripts/DustParticles";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,7 +1,7 @@
 #links {
   display: flex;
   column-gap: 0.75em;
-  margin-top: .2em;
+  margin-top: 0.2em;
 
   @media (prefers-reduced-motion: no-preference) {
     animation: Slide-in 1s backwards;
@@ -21,17 +21,26 @@
   }
 }
 
+.Canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  // filter: blur(3px);
+  height: 100vh;
+  width: 100vw;
+
+  animation: Fade-in 20s ease-in;
+}
+
 .Name-header {
+  z-index: 100;
   color: coral;
   user-select: none;
   @media (prefers-reduced-motion: no-preference) {
     animation: Fade-in 1.2s;
   }
   /* animation: Title-focus 2s infinite alternate ease-in-out; */
-}
-
-:root {
-  background-color: #282c34;
 }
 
 .App {
@@ -50,7 +59,7 @@
 }
 
 .App-header {
-  height: 35vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
