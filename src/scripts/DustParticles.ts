@@ -73,6 +73,8 @@ const draw = (ctx: CanvasRenderingContext2D) => {
     const count = (4 * particles[i].size) / 80 + 1;
     for (let o = 0; o < count; o++) {
       ctx.beginPath();
+
+      //draw gradiant circle http://jsfiddle.net/r8Kqy/48/
       ctx.arc(
         particles[i].pos.x,
         particles[i].pos.y,
