@@ -21,6 +21,42 @@
   }
 }
 
+.load-first {
+  animation-play-state: paused !important;
+}
+
+//My avatar logo//
+.avatar {
+  animation: wobble 6s infinite alternate ease-in-out,
+    blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
+  image-rendering: optimizeSpeed;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes blur-in {
+  0% {
+    opacity: 20%;
+    filter: blur(15px);
+    transform: scale(88%);
+  }
+}
+
+@keyframes spin-enter {
+  from {
+    transform: scale(0%) rotateZ(-360 * 1deg);
+  }
+}
+
+@keyframes wobble {
+  from {
+    transform: rotateZ(3deg);
+  }
+  to {
+    transform: rotateZ(-3deg);
+  }
+}
+
 .Canvas {
   position: fixed;
   top: 0;
@@ -66,9 +102,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 
-  margin: 25vh 2em;
-
-  /* animation: Fade-from-black 2s; */
+  margin: 10vh 2em;
 }
 
 @keyframes Bloat-out {

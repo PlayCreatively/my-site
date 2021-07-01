@@ -1,4 +1,4 @@
-// import selfPortrait from "content/self portrait.png";
+import selfPortrait from "content/self portrait.png";
 import logo from "./content/logo.svg";
 import React from "react";
 import { GitHubLogo, TwitterLogo, YoutubeLogo } from "./content/SVGlogos";
@@ -24,6 +24,12 @@ function App() {
             height: "8em",
           }}
         >
+          <img
+            className="avatar"
+            src={selfPortrait}
+            height="400px"
+            // style={{ imageRendering: "pixelated" }}
+          ></img>
           <h1 className="Name-header">
             Alexander Freyr Þorgeirsson
             <div id="links">

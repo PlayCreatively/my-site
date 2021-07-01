@@ -30,6 +30,78 @@
   transition: 0.1s;
 }
 
+.load-first {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+
+.avatar {
+  -webkit-animation: wobble 6s infinite alternate ease-in-out, blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
+          animation: wobble 6s infinite alternate ease-in-out, blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
+  image-rendering: optimizeSpeed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
+@-webkit-keyframes blur-in {
+  0% {
+    opacity: 20%;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    -webkit-transform: scale(88%);
+            transform: scale(88%);
+  }
+}
+
+@keyframes blur-in {
+  0% {
+    opacity: 20%;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    -webkit-transform: scale(88%);
+            transform: scale(88%);
+  }
+}
+
+@-webkit-keyframes spin-enter {
+  from {
+    -webkit-transform: scale(0%) rotateZ(-360deg);
+            transform: scale(0%) rotateZ(-360deg);
+  }
+}
+
+@keyframes spin-enter {
+  from {
+    -webkit-transform: scale(0%) rotateZ(-360deg);
+            transform: scale(0%) rotateZ(-360deg);
+  }
+}
+
+@-webkit-keyframes wobble {
+  from {
+    -webkit-transform: rotateZ(3deg);
+            transform: rotateZ(3deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-3deg);
+            transform: rotateZ(-3deg);
+  }
+}
+
+@keyframes wobble {
+  from {
+    -webkit-transform: rotateZ(3deg);
+            transform: rotateZ(3deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-3deg);
+            transform: rotateZ(-3deg);
+  }
+}
+
 .Canvas {
   position: fixed;
   top: 0;
@@ -86,8 +158,7 @@
           justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin: 25vh 2em;
-  /* animation: Fade-from-black 2s; */
+  margin: 10vh 2em;
 }
 
 @-webkit-keyframes Bloat-out {

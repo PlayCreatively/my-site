@@ -74,7 +74,7 @@ const draw = (ctx: CanvasRenderingContext2D) => {
     for (let o = 0; o < count; o++) {
       ctx.beginPath();
 
-      //draw gradiant circle http://jsfiddle.net/r8Kqy/48/
+      //TODO: draw gradiant circle http://jsfiddle.net/r8Kqy/48/
       ctx.arc(
         particles[i].pos.x,
         particles[i].pos.y,
