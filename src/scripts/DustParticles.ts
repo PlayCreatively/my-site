@@ -1,14 +1,10 @@
 class Particle {
-  pos: { x: number; y: number; z: number };
+  pos: { x: number; y: number };
   size: number;
   vel: { x: number; y: number };
   opacity: number;
 
-  constructor(
-    pos = { x: 0, y: 0, z: 1 },
-    size = 2,
-    vel = { x: 0.02, y: -0.04 }
-  ) {
+  constructor(pos = { x: 0, y: 0 }, size = 2, vel = { x: 0.02, y: -0.04 }) {
     this.pos = pos;
     this.size = size;
     this.vel = vel;
@@ -46,9 +42,8 @@ function getRandomParticle() {
     {
       x: width * Math.random() + 10,
       y: height * Math.random() + 10,
-      z: 3 * Math.random() + 1,
     },
-    Math.random() * 70 + 10,
+    Math.random() * 70 + 5,
     {
       x: random() * 0.1,
       y: random() * 0.1,
@@ -56,7 +51,7 @@ function getRandomParticle() {
   );
 }
 
-let particles: Particle[] = new Array(100);
+let particles: Particle[] = new Array(80);
 for (let i = 0; i < particles.length; i++) {
   particles[i] = getRandomParticle();
 }

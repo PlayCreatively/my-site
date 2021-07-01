@@ -33,6 +33,7 @@ export default function Canvas(
       // {...props}
       width={window.innerWidth}
       height={window.innerHeight}
+      style={{ zIndex: 0 }}
     >
       {/* {{...children}} */}
     </canvas>

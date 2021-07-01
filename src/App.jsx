@@ -16,7 +16,7 @@ function App() {
     <div className="App Scroll-bar" style={{ position: "relative" }}>
       <header
         className="App-header"
-        style={{ flexDirection: "row", position: "relative" }}
+        style={{ flexDirection: "row", position: "relative", zIndex: 10 }}
       >
         <div
           style={{
