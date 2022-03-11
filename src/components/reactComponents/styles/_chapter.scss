@@ -1,0 +1,40 @@
+$headerSize: 3em;
+
+.Chapter {
+  margin-top: 2rem;
+  border-top: 2px solid hsl(0, 0%, 100%, 0.15);
+  text-align: start;
+
+  .Chapter-header {
+    color: whitesmoke;
+    font-size: $headerSize;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+
+    cursor: pointer;
+  }
+
+  .Chapter {
+    .Chapter-header {
+      font-size: $headerSize * 0.75;
+    }
+  }
+}
+
+.Chapter-header:hover::after {
+  content: " #";
+  transition: 200ms;
+  color: whitesmoke;
+  transform: translateX(20px);
+  position: relative;
+  left: -0.1em;
+}
+.Chapter-header::after {
+  color: transparent;
+  position: relative;
+  transition: 200ms;
+  top: 0.1em;
+  left: -0.75em;
+
+  content: " #";
+}

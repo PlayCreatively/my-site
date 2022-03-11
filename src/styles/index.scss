@@ -1,20 +1,7 @@
 @import "./header";
-@import "./scroll_bar";
-
-:root {
-  background-color: #18191d;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@import "./_scroll_bar.sass";
+@import "./main";
+@import "../components/reactComponents/styles/chapter";
+@import "../components/reactComponents/styles/lineSegment";
+@import "../components/reactComponents/styles/nav";
+@import "../components/reactComponents/styles/scrollText";

@@ -1,10 +1,10 @@
 {
-  "liveSassCompile.settings.showOutputWindow": false,
+//   "typescript.tsdk": "node_modules\\typescript\\lib",
   "liveSassCompile.settings.formats": [
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "src/styles/index"
+      "savePath": "/src"
     }
-  ],
+  ]
 }

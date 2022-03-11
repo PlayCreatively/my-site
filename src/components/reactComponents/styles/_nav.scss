@@ -1,0 +1,18 @@
+nav{
+	background-color: hsla(0, 0%, 50%, 0.18);
+	margin-bottom: 1em;
+	display: flex;
+
+	a{
+		color: rgb(226, 226, 226);
+		font-size: 1.2rem;
+		font-weight: bold;
+		text-decoration: none;
+		// background-color: rgb(70, 62, 53);
+		padding: .6em 1em;
+		font-family: sans-serif;
+	}
+	a:hover{
+		background-color: rgba(0, 0, 0, 0.16);
+	}
+}

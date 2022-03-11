@@ -4,10 +4,16 @@ class Particle {
   vel: { x: number; y: number };
   opacity: number;
 
-  constructor(pos = { x: 0, y: 0 }, size = 2, vel = { x: 0.02, y: -0.04 }) {
+  constructor(
+    pos = { x: 0, y: 0 },
+    size = 2,
+    vel = { x: 0.02, y: -0.04 },
+    opacity = 1
+  ) {
     this.pos = pos;
     this.size = size;
     this.vel = vel;
+    this.opacity = opacity;
   }
   update() {
     this.pos.x += this.vel.x;

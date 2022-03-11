@@ -1,0 +1,21 @@
+.LineSegment {
+  $color: hsl(0, 0%, 50%, 0.5);
+
+  border-top: 0.1em dashed $color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto 0 auto;
+  width: 90%;
+
+  p {
+    color: $color;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.8em;
+    position: relative;
+    bottom: 0.6em;
+    padding: 0 0.5em;
+    background-color: black;
+  }
+}

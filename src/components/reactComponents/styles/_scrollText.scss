@@ -1,0 +1,38 @@
+.ScrollText {
+  overflow-y: scroll;
+  overflow-x: visible;
+  height: -webkit-fill-available;
+  margin: 2em 0;
+}
+
+.Side {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* width */
+.ScrollText::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.ScrollText::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* Handle */
+.ScrollText::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 50%, 0.25);
+  border-radius: 1em;
+}
+
+/* Handle on hover */
+.ScrollText::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -69,50 +69,6 @@
   animation: Fade-in 20s ease-in;
 }
 
-.Name-header {
-  z-index: 100;
-  color: coral;
-  user-select: none;
-  @media (prefers-reduced-motion: no-preference) {
-    animation: Fade-in 1.2s;
-  }
-  /* animation: Title-focus 2s infinite alternate ease-in-out; */
-}
-
-.App {
-  text-align: center;
-  overflow-x: hidden;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-jump 0.35s infinite alternate,
-      App-logo-spin 0.7s infinite alternate ease-in-out;
-
-    position: relative;
-    height: 7em;
-  }
-}
-
-.App-header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-
-  margin: 10vh 2em;
-}
-
-@keyframes Bloat-out {
-  50% {
-    size: 500%;
-  }
-  100% {
-  }
-}
-
 @keyframes Fade-from-black {
   from {
     filter: brightness(0);
@@ -120,16 +76,6 @@
   to {
   }
 }
-
-// .Slide-apart-vertical > * {
-//   animation: Slide-apart-vertical 5s both;
-// }
-
-// @keyframes Slide-apart-vertical {
-//   to {
-//     margin: 1em auto;
-//   }
-// }
 
 @keyframes Slide-in {
   from {
@@ -144,12 +90,6 @@
   }
 }
 
-.App-logo {
-  align-self: center;
-  block-size: 7em;
-  pointer-events: none;
-  user-select: none;
-}
 
 @keyframes App-logo-jump {
   from {

@@ -1,0 +1,355 @@
+.Chapter {
+  margin-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  text-align: start;
+}
+.Chapter .Chapter-header {
+  color: whitesmoke;
+  font-size: 3em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.Chapter .Chapter .Chapter-header {
+  font-size: 2.25em;
+}
+
+.Chapter-header:hover::after {
+  content: " #";
+  transition: 200ms;
+  color: whitesmoke;
+  transform: translateX(20px);
+  position: relative;
+  left: -0.1em;
+}
+
+.Chapter-header::after {
+  color: transparent;
+  position: relative;
+  transition: 200ms;
+  top: 0.1em;
+  left: -0.75em;
+  content: " #";
+}
+
+.ScrollText {
+  overflow-y: scroll;
+  overflow-x: visible;
+  height: -webkit-fill-available;
+  margin: 2em 0;
+}
+
+.Side {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* width */
+.ScrollText::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.ScrollText::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* Handle */
+.ScrollText::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.25);
+  border-radius: 1em;
+}
+
+/* Handle on hover */
+.ScrollText::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.LineSegment {
+  border-top: 0.1em dashed rgba(128, 128, 128, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto 0 auto;
+  width: 90%;
+}
+.LineSegment p {
+  color: rgba(128, 128, 128, 0.5);
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.8em;
+  position: relative;
+  bottom: 0.6em;
+  padding: 0 0.5em;
+  background-color: black;
+}
+
+nav {
+  background-color: rgba(128, 128, 128, 0.18);
+  margin-bottom: 1em;
+  display: flex;
+}
+nav a {
+  color: #e2e2e2;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.6em 1em;
+  font-family: sans-serif;
+}
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.16);
+}/*# sourceMappingURL=index.css.map */rames Fade-from-black {
+  from {
+    filter: brightness(0);
+  }
+}
+
+@keyframes Fade-from-black {
+  from {
+    filter: brightness(0);
+  }
+}
+@-webkit-keyframes Slide-in {
+  from {
+    column-gap: 0.2em;
+  }
+}
+@keyframes Slide-in {
+  from {
+    -moz-column-gap: 0.2em;
+         column-gap: 0.2em;
+  }
+}
+@-webkit-keyframes Fade-in {
+  from {
+    opacity: 0%;
+  }
+}
+@keyframes Fade-in {
+  from {
+    opacity: 0%;
+  }
+}
+@-webkit-keyframes App-logo-jump {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 80px;
+  }
+}
+@keyframes App-logo-jump {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 80px;
+  }
+}
+@-webkit-keyframes App-logo-spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(300deg);
+  }
+}
+@keyframes App-logo-spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(300deg);
+  }
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  /* Handle */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  /* Handle on hover */
+  background: #6e6e6e;
+}
+
+/*
+		cool header text
+	font-family: 'Acme', sans-serif;
+		clean handwriting
+	font-family: 'Caveat', cursive;
+		simplistic round text
+	font-family: 'Fredoka', sans-serif;
+		thich round header text
+	font-family: 'Fredoka One', cursive;
+		playful comic sans
+	font-family: 'Indie Flower', cursive;
+		clean paragraph text
+	font-family: 'Roboto Slab', serif;
+		Stylish handwriting for quoting
+	font-family: 'Sacramento', cursive;
+		stylish header text
+	font-family: 'Sansita Swashed', cursive;
+		round title text
+	font-family: 'Supermercado One', cursive;
+*/
+p {
+  font-family: "Roboto Slab";
+}
+
+body {
+  background-color: #18191d;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.Chapter {
+  border-top: none !important;
+}
+
+.Name-header {
+  color: coral;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: "Fredoka";
+}
+@media (prefers-reduced-motion: no-preference) {
+  .Name-header {
+    -webkit-animation: Fade-in 1.2s;
+            animation: Fade-in 1.2s;
+  }
+}
+
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.App-header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: 10vh 2em;
+}
+
+.Chapter {
+  margin-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  text-align: start;
+}
+.Chapter .Chapter-header {
+  color: whitesmoke;
+  font-size: 3em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.Chapter .Chapter .Chapter-header {
+  font-size: 2.25em;
+}
+
+.Chapter-header:hover::after {
+  content: " #";
+  transition: 200ms;
+  color: whitesmoke;
+  transform: translateX(20px);
+  position: relative;
+  left: -0.1em;
+}
+
+.Chapter-header::after {
+  color: transparent;
+  position: relative;
+  transition: 200ms;
+  top: 0.1em;
+  left: -0.75em;
+  content: " #";
+}
+
+.LineSegment {
+  border-top: 0.1em dashed rgba(128, 128, 128, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto 0 auto;
+  width: 90%;
+}
+.LineSegment p {
+  color: rgba(128, 128, 128, 0.5);
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.8em;
+  position: relative;
+  bottom: 0.6em;
+  padding: 0 0.5em;
+  background-color: black;
+}
+
+nav {
+  background-color: rgba(128, 128, 128, 0.18);
+  margin-bottom: 1em;
+  display: flex;
+}
+nav a {
+  color: #e2e2e2;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.6em 1em;
+  font-family: sans-serif;
+}
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.ScrollText {
+  overflow-y: scroll;
+  overflow-x: visible;
+  height: -webkit-fill-available;
+  margin: 2em 0;
+}
+
+.Side {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* width */
+.ScrollText::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.ScrollText::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* Handle */
+.ScrollText::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.25);
+  border-radius: 1em;
+}
+
+/* Handle on hover */
+.ScrollText::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}/*# sourceMappingURL=index.css.map */

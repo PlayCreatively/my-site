@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Fredoka&family=Fredoka+One&family=Indie+Flower&family=Roboto+Slab&family=Sacramento&family=Sansita+Swashed&family=Supermercado+One&display=swap");
+/*
+		cool header text
+	font-family: 'Acme', sans-serif;
+		clean handwriting
+	font-family: 'Caveat', cursive;
+		simplistic round text
+	font-family: 'Fredoka', sans-serif;
+		thich round header text
+	font-family: 'Fredoka One', cursive;
+		playful comic sans
+	font-family: 'Indie Flower', cursive;
+		clean paragraph text
+	font-family: 'Roboto Slab', serif;
+		Stylish handwriting for quoting
+	font-family: 'Sacramento', cursive;
+		stylish header text
+	font-family: 'Sansita Swashed', cursive;
+		round title text
+	font-family: 'Supermercado One', cursive;
+*/
+
+$dark-background: #18191d;
+
+p {
+  font-family: "Roboto Slab";
+}
+
+body {
+	background-color: #18191d;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	  sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+
+//all but nav
+// #root > :not(:first-child) {
+//   width: 50rem;
+//   margin-right: auto;
+//   margin-left: auto;
+// }
+
+.Chapter {
+	border-top: none !important;
+}  
+
+.Name-header {
+  color: coral;
+  user-select: none;
+  font-family: "Fredoka";
+  @media (prefers-reduced-motion: no-preference) {
+    animation: Fade-in 1.2s;
+  }
+}
+
+
+.App {
+	text-align: center;
+	overflow-x: hidden;
+  }
+
+.App-header {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+  
+	margin: 10vh 2em;
+  }
