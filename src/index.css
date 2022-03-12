@@ -1,110 +1,97 @@
-.Chapter {
-  margin-top: 2rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.15);
-  text-align: start;
-}
-.Chapter .Chapter-header {
-  color: whitesmoke;
-  font-size: 3em;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  cursor: pointer;
-}
-.Chapter .Chapter .Chapter-header {
-  font-size: 2.25em;
-}
-
-.Chapter-header:hover::after {
-  content: " #";
-  transition: 200ms;
-  color: whitesmoke;
-  transform: translateX(20px);
-  position: relative;
-  left: -0.1em;
-}
-
-.Chapter-header::after {
-  color: transparent;
-  position: relative;
-  transition: 200ms;
-  top: 0.1em;
-  left: -0.75em;
-  content: " #";
-}
-
-.ScrollText {
-  overflow-y: scroll;
-  overflow-x: visible;
-  height: -webkit-fill-available;
-  margin: 2em 0;
-}
-
-.Side {
-  height: 400px;
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Fredoka&family=Fredoka+One&family=Indie+Flower&family=Roboto+Slab&family=Sacramento&family=Sansita+Swashed&family=Supermercado+One&display=swap");
+#links {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -moz-column-gap: 0.75em;
+       column-gap: 0.75em;
+  margin-top: 0.2em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #links {
+    -webkit-animation: Slide-in 1s backwards;
+            animation: Slide-in 1s backwards;
+  }
+}
+#links svg {
+  height: 0.9em;
+  fill: whitesmoke;
+  float: left;
+  transition: 0.3s;
+}
+#links svg:hover {
+  transform: scale(1.05);
+  fill: coral;
+  transition: 0.1s;
 }
 
-/* width */
-.ScrollText::-webkit-scrollbar {
-  width: 10px;
+.load-first {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
 }
 
-/* Track */
-.ScrollText::-webkit-scrollbar-track {
-  background: transparent;
+.avatar {
+  -webkit-animation: wobble 6s infinite alternate ease-in-out, blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
+          animation: wobble 6s infinite alternate ease-in-out, blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
+  image-rendering: optimizeSpeed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
 }
 
-::-webkit-scrollbar-corner {
-  background-color: transparent;
+@-webkit-keyframes blur-in {
+  0% {
+    opacity: 20%;
+    filter: blur(15px);
+    transform: scale(88%);
+  }
 }
 
-/* Handle */
-.ScrollText::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, 0.25);
-  border-radius: 1em;
+@keyframes blur-in {
+  0% {
+    opacity: 20%;
+    filter: blur(15px);
+    transform: scale(88%);
+  }
+}
+@-webkit-keyframes spin-enter {
+  from {
+    transform: scale(0%) rotateZ(-360deg);
+  }
+}
+@keyframes spin-enter {
+  from {
+    transform: scale(0%) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes wobble {
+  from {
+    transform: rotateZ(3deg);
+  }
+  to {
+    transform: rotateZ(-3deg);
+  }
+}
+@keyframes wobble {
+  from {
+    transform: rotateZ(3deg);
+  }
+  to {
+    transform: rotateZ(-3deg);
+  }
+}
+.Canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  height: 100vh;
+  width: 100vw;
+  -webkit-animation: Fade-in 20s ease-in;
+          animation: Fade-in 20s ease-in;
 }
 
-/* Handle on hover */
-.ScrollText::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.LineSegment {
-  border-top: 0.1em dashed rgba(128, 128, 128, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1em auto 0 auto;
-  width: 90%;
-}
-.LineSegment p {
-  color: rgba(128, 128, 128, 0.5);
-  font-style: italic;
-  font-weight: bold;
-  font-size: 0.8em;
-  position: relative;
-  bottom: 0.6em;
-  padding: 0 0.5em;
-  background-color: black;
-}
-
-nav {
-  background-color: rgba(128, 128, 128, 0.18);
-  margin-bottom: 1em;
-  display: flex;
-}
-nav a {
-  color: #e2e2e2;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.6em 1em;
-  font-family: sans-serif;
-}
-nav a:hover {
-  background-color: rgba(0, 0, 0, 0.16);
-}/*# sourceMappingURL=index.css.map */rames Fade-from-black {
+@-webkit-keyframes Fade-from-black {
   from {
     filter: brightness(0);
   }
@@ -168,18 +155,6 @@ nav a:hover {
     transform: rotateZ(300deg);
   }
 }
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  /* Handle */
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  /* Handle on hover */
-  background: #6e6e6e;
-}
-
 /*
 		cool header text
 	font-family: 'Acme', sans-serif;
@@ -202,20 +177,31 @@ nav a:hover {
 */
 p {
   font-family: "Roboto Slab";
+  color: whitesmoke;
+  font-size: 2.5vh;
+}
+
+* {
+  color: whitesmoke;
 }
 
 body {
   background-color: #18191d;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+#root > :not(:first-child) {
+  width: 50rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Chapter {
   border-top: none !important;
 }
-
+.Chapter .Chapter-header {
+  font-family: "Fredoka", sans-serif !important;
+}
 .Name-header {
   color: coral;
   -webkit-user-select: none;
@@ -246,6 +232,18 @@ body {
   margin: 10vh 2em;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  /* Handle */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  /* Handle on hover */
+  background: #6e6e6e;
+}
+
 .Chapter {
   margin-top: 2rem;
   border-top: 2px solid rgba(255, 255, 255, 0.15);
@@ -261,22 +259,21 @@ body {
   font-size: 2.25em;
 }
 
-.Chapter-header:hover::after {
-  content: " #";
-  transition: 200ms;
-  color: whitesmoke;
-  transform: translateX(20px);
-  position: relative;
-  left: -0.1em;
-}
-
-.Chapter-header::after {
+.Chapter-header::before {
   color: transparent;
   position: relative;
   transition: 200ms;
   top: 0.1em;
   left: -0.75em;
-  content: " #";
+  position: relative;
+  content: "#";
+}
+
+.Chapter-header:hover::before {
+  transition: 200ms;
+  color: whitesmoke;
+  transform: translateX(20px);
+  left: -0.1em;
 }
 
 .LineSegment {

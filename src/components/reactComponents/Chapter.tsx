@@ -4,7 +4,7 @@ interface IChapter {
 
 const Chapter: React.FC<IChapter> = ({ title, children }) => {
   function handleClick() {
-    document.location.href = "#" + title.toLowerCase();
+    document.location.href = "#" + title.toLowerCase().replaceAll(" ", "-");
   }
 
   return (

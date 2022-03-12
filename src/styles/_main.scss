@@ -24,28 +24,35 @@ $dark-background: #18191d;
 
 p {
   font-family: "Roboto Slab";
+  color: whitesmoke;
+  font-size: 2.5vh;
+}
+
+* {
+  color: whitesmoke;
 }
 
 body {
-	background-color: #18191d;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-	  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-	  sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  }
+  background-color: #18191d;
+  margin: 0;
+}
 
-//all but nav
-// #root > :not(:first-child) {
-//   width: 50rem;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
+// all but nav
+#root > :not(:first-child) {
+  width: 50rem;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .Chapter {
-	border-top: none !important;
-}  
+  border-top: none !important;
+  .Chapter-header {
+	font-family: "Fredoka", sans-serif !important;
+  }
+
+  .Chapter .Chapter-header {
+  }
+}
 
 .Name-header {
   color: coral;
@@ -56,19 +63,18 @@ body {
   }
 }
 
-
 .App {
-	text-align: center;
-	overflow-x: hidden;
-  }
+  text-align: center;
+  overflow-x: hidden;
+}
 
 .App-header {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-  
-	margin: 10vh 2em;
-  }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  margin: 10vh 2em;
+}

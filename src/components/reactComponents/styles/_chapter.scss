@@ -10,7 +10,6 @@ $headerSize: 3em;
     font-size: $headerSize;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
-
     cursor: pointer;
   }
 
@@ -21,20 +20,20 @@ $headerSize: 3em;
   }
 }
 
-.Chapter-header:hover::after {
-  content: " #";
-  transition: 200ms;
-  color: whitesmoke;
-  transform: translateX(20px);
-  position: relative;
-  left: -0.1em;
-}
-.Chapter-header::after {
+.Chapter-header::before {
   color: transparent;
   position: relative;
   transition: 200ms;
   top: 0.1em;
   left: -0.75em;
+  position: relative;
 
-  content: " #";
+  content: "#";
+}
+
+.Chapter-header:hover::before {
+  transition: 200ms;
+  color: whitesmoke;
+  transform: translateX(20px);
+  left: -0.1em;
 }
