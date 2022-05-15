@@ -191,7 +191,7 @@ body {
 }
 
 #root > :not(:first-child) {
-  width: 50rem;
+  width: 55rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -202,6 +202,7 @@ body {
 .Chapter .Chapter-header {
   font-family: "Fredoka", sans-serif !important;
 }
+
 .Name-header {
   color: coral;
   -webkit-user-select: none;
@@ -254,9 +255,15 @@ body {
   font-size: 3em;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   cursor: pointer;
+  position: relative;
+  left: -1em;
 }
 .Chapter .Chapter .Chapter-header {
   font-size: 2.25em;
+  margin: 0;
+}
+.Chapter .Chapter-content {
+  margin: 0 2vw;
 }
 
 .Chapter-header::before {
@@ -349,4 +356,63 @@ nav a:hover {
 /* Handle on hover */
 .ScrollText::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.DropDown .Title {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 1em 1em 0 0;
+  padding: 0.3em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.DropDown .Title:hover {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+@-webkit-keyframes unfold {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 20em;
+  }
+}
+
+@keyframes unfold {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 20em;
+  }
+}
+.DropDown .Container {
+  overflow: hidden;
+  -webkit-animation: unfold alternate 400ms;
+          animation: unfold alternate 400ms;
+}
+.DropDown .Container p {
+  border-radius: 0 0 1em 1em;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.247);
+  padding: 0.6em;
+}
+
+.ReadMore {
+  margin-bottom: 1.5em;
+}
+.ReadMore .Content {
+  max-height: 3.5em;
+}
+.ReadMore .grad {
+  background: linear-gradient(0deg, #18191d 10%, transparent 100%);
+}
+.ReadMore .Button {
+  cursor: pointer;
+  padding-left: 1em;
+  font-size: 1.1em;
 }/*# sourceMappingURL=index.css.map */

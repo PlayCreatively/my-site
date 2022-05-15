@@ -11,12 +11,19 @@ $headerSize: 3em;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     cursor: pointer;
+    position: relative;
+    left: -1em;
   }
 
   .Chapter {
     .Chapter-header {
       font-size: $headerSize * 0.75;
+      margin: 0;
     }
+  }
+
+  .Chapter-content {
+    margin: 0 2vw;
   }
 }
 

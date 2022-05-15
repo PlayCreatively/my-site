@@ -8,7 +8,7 @@ const Chapter: React.FC<IChapter> = ({ title, children }) => {
   }
 
   return (
-    <div className="Chapter" id={title.toLowerCase()}>
+    <div className="Chapter" id={title.toLowerCase().replaceAll(" ", "-")}>
       <h1 className="Chapter-header" onClick={handleClick}>
         {title}
       </h1>

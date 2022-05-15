@@ -1,0 +1,15 @@
+.ReadMore {
+  margin-bottom: 1.5em;
+  .Content {
+    max-height: 3.5em;
+  }
+  .grad{
+    background: linear-gradient(0deg, $dark-background 10%, transparent 100%);
+
+  }
+  .Button {
+    cursor: pointer;
+    padding-left: 1em;
+    font-size: 1.1em;
+  }
+}

@@ -39,7 +39,7 @@ body {
 
 // all but nav
 #root > :not(:first-child) {
-  width: 50rem;
+  width: 55rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -48,9 +48,6 @@ body {
   border-top: none !important;
   .Chapter-header {
 	font-family: "Fredoka", sans-serif !important;
-  }
-
-  .Chapter .Chapter-header {
   }
 }
 
