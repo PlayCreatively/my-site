@@ -1,0 +1,29 @@
+.speech-bubble div {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  border-radius: 0.7em;
+  background-color: white;
+}
+
+.speech-bubble {
+  overflow: hidden;
+  animation: writer 2s infinite alternate ease-out;
+  z-index: -1;
+  bottom: 5em;
+  position: relative;
+}
+
+@keyframes writer {
+  from {
+    width: 0em;
+  }
+  to {
+    transform: translateX(200px);
+    width: 100%;
+  }
+}

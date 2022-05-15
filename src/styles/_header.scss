@@ -50,10 +50,10 @@
 
 @keyframes wobble {
   from {
-    transform: rotateZ(3deg);
+    transform: translateY(0.2em) rotateZ(3deg);
   }
   to {
-    transform: rotateZ(-3deg);
+    transform: translateY(-0.2em) rotateZ(-3deg);
   }
 }
 

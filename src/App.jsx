@@ -4,6 +4,7 @@ import React from "react";
 import { GitHubLogo, TwitterLogo, YoutubeLogo } from "./content/SVGlogos";
 import Canvas from "components/Canvas";
 import { draw } from "scripts/DustParticles";
+import IdeaGenerator from "components/IdeaGenerator";
 
 let links = {
   github: "https://github.com/PlayCreatively",
@@ -11,7 +12,11 @@ let links = {
   youtube: "https://www.youtube.com/channel/UCXUqdm8g8983N53-IEdkm0A",
 };
 
+//TODO Add a blog page
+
 function App() {
+  return <IdeaGenerator></IdeaGenerator>;
+
   return (
     <div className="App Scroll-bar" style={{ position: "relative" }}>
       <header
@@ -30,6 +35,10 @@ function App() {
             height="400px"
             // style={{ imageRendering: "pixelated" }}
           ></img>
+
+          <div className="speech-bubble">
+            <div>Drinking decaf ☕</div>
+          </div>
           <h1 className="Name-header">
             Alexander Freyr Þorgeirsson
             <div id="links">
