@@ -1,5 +1,10 @@
 import selfPortrait from "content/self portrait.png";
-import { GitHubLogo, TwitterLogo, YoutubeLogo } from "../content/SVGlogos";
+import {
+  GitHubLogo,
+  TwitterLogo,
+  YoutubeLogo,
+  ItchLogo,
+} from "../content/SVGlogos";
 import Canvas from "components/Canvas";
 import { draw } from "scripts/DustParticles";
 
@@ -7,6 +12,7 @@ let links = {
   github: "https://github.com/PlayCreatively",
   twitter: "https://twitter.com/PlayCreatively",
   youtube: "https://www.youtube.com/channel/UCXUqdm8g8983N53-IEdkm0A",
+  itch: "https://playcreatively.itch.io/",
 };
 
 function HomePage() {
@@ -39,6 +45,9 @@ function HomePage() {
               </a>
               <a href={links.youtube}>
                 <YoutubeLogo />
+              </a>
+              <a href={links.itch}>
+                <ItchLogo />
               </a>
             </div>
           </h1>
