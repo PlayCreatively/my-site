@@ -177,12 +177,12 @@
 */
 p {
   font-family: "Roboto Slab";
-  color: whitesmoke;
+  color: #d3d3d3;
   font-size: 2.5vh;
 }
 
 * {
-  color: whitesmoke;
+  color: #d3d3d3;
 }
 
 body {
@@ -196,12 +196,31 @@ body {
   margin-left: auto;
 }
 
-.Chapter {
-  border-top: none !important;
+.List-style {
+  font-family: Fredoka;
+  border-radius: 0.3em;
+  background: rgba(255, 255, 255, 0.1);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5em;
+  padding-left: 1.5em;
 }
-.Chapter .Chapter-header {
-  font-family: "Fredoka", sans-serif !important;
+.List-style > li {
+  color: coral;
 }
+.List-style li::marker {
+  color: rgba(255, 255, 255, 0.4);
+}
+.List-style ul li {
+  color: rgba(187, 177, 150, 0.639);
+}
+
+.Highlight {
+  color: coral;
+  font-size: 1.2em;
+}
+
 .Name-header {
   color: coral;
   -webkit-user-select: none;
@@ -223,13 +242,13 @@ body {
 }
 
 .App-header {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  margin: 10vh 2em;
+  color: #d3d3d3;
+  margin: 0 2em;
 }
 
 ::-webkit-scrollbar {
@@ -241,12 +260,11 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   /* Handle on hover */
-  background: #6e6e6e;
+  background: rgb(110, 110, 110);
 }
 
 .Chapter {
   margin-top: 2rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.15);
   text-align: start;
 }
 .Chapter .Chapter-header {
@@ -254,6 +272,9 @@ body {
   font-size: 3em;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   cursor: pointer;
+}
+.Chapter .Chapter-content {
+  border-top: 2px solid hsla(0deg, 0%, 100%, 0.15);
 }
 .Chapter .Chapter .Chapter-header {
   font-size: 2.25em;
@@ -263,7 +284,6 @@ body {
   color: transparent;
   position: relative;
   transition: 200ms;
-  top: 0.1em;
   left: -0.75em;
   position: relative;
   content: "#";
@@ -277,7 +297,7 @@ body {
 }
 
 .LineSegment {
-  border-top: 0.1em dashed rgba(128, 128, 128, 0.5);
+  border-top: 0.1em dashed hsla(0deg, 0%, 50%, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,7 +305,7 @@ body {
   width: 90%;
 }
 .LineSegment p {
-  color: rgba(128, 128, 128, 0.5);
+  color: hsla(0deg, 0%, 50%, 0.5);
   font-style: italic;
   font-weight: bold;
   font-size: 0.8em;
@@ -296,12 +316,12 @@ body {
 }
 
 nav {
-  background-color: rgba(128, 128, 128, 0.18);
+  background-color: hsla(0deg, 0%, 50%, 0.18);
   margin-bottom: 1em;
   display: flex;
 }
 nav a {
-  color: #e2e2e2;
+  color: rgb(226, 226, 226);
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
@@ -342,7 +362,7 @@ nav a:hover {
 
 /* Handle */
 .ScrollText::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, 0.25);
+  background-color: hsla(0deg, 0%, 50%, 0.25);
   border-radius: 1em;
 }
 
