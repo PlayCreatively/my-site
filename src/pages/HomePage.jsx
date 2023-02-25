@@ -33,7 +33,7 @@ function HomePage() {
             src={selfPortrait}
             height="400px"
             // style={{ imageRendering: "pixelated" }}
-          ></img>
+          />
           <h1 className="Name-header">
             Alexander Freyr Þorgeirsson
             <div id="links">

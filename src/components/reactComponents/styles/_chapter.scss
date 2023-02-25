@@ -3,17 +3,17 @@ $headerSize: 3em;
 .Chapter {
   margin-top: 2rem;
   text-align: start;
-  
+  width: 100%;
+
   .Chapter-header {
     color: whitesmoke;
     font-size: $headerSize;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+      "Lucida Sans", Arial, sans-serif;
     cursor: pointer;
   }
-  .Chapter-content{
+  .Chapter-content {
     border-top: 2px solid hsl(0, 0%, 100%, 0.15);
-    
   }
 
   .Chapter {
