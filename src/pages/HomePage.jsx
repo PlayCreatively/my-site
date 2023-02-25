@@ -7,6 +7,9 @@ import {
 } from "../content/SVGlogos";
 import Canvas from "components/Canvas";
 import { draw } from "scripts/DustParticles";
+import ImageGallery from "components/ImageGallery";
+import GetImages from "components/GetImages";
+import Chapter from "components/reactComponents/Chapter";
 
 let links = {
   github: "https://github.com/PlayCreatively",
@@ -54,6 +57,9 @@ function HomePage() {
         </div>
       </header>
       {/* <Canvas id="bg" draw={draw} /> */}
+      <Chapter title="Drawings">
+        <ImageGallery urls={GetImages()} />
+      </Chapter>
     </div>
   );
 }
