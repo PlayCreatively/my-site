@@ -1,6 +1,8 @@
+
 @import "./header";
 @import "./main";
-@import "./_scroll_bar.sass";
+@import "./scroll_bar";
+@import "./image_gallery";
 @import "../components/reactComponents/styles/chapter";
 @import "../components/reactComponents/styles/lineSegment";
 @import "../components/reactComponents/styles/nav";

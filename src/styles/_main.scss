@@ -21,20 +21,29 @@
 */
 
 $dark-background: #18191d;
+$main-color: coral;
+$secondary-color: #f7f0da;
+$white: #d3d3d3;
 
 p {
   font-family: "Roboto Slab";
-  color: whitesmoke;
+  color: $white;
   font-size: 2.5vh;
 }
 
 * {
-  color: whitesmoke;
+  color: $white;
 }
 
 body {
-  background-color: #18191d;
+  background-color: $dark-background;
   margin: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // all but nav
@@ -44,14 +53,30 @@ body {
   margin-left: auto;
 }
 
-.Chapter {
-  border-top: none !important;
-  .Chapter-header {
-	font-family: "Fredoka", sans-serif !important;
+.List-style {
+  font-family: Fredoka;
+  border-radius: 0.3em;
+  background: rgb(255 255 255 / 10%);
+  width: fit-content;
+  padding: 0.5em;
+  padding-left: 1.5em;
+
+  > li {
+    color: coral;
   }
 
-  .Chapter .Chapter-header {
+  li::marker {
+    color: rgba(255, 255, 255, 0.4);
   }
+
+  ul li {
+    color: rgba(187, 177, 150, 0.639);
+  }
+}
+
+.Highlight {
+  color: coral;
+  font-size: 1.2em;
 }
 
 .Name-header {
@@ -69,12 +94,12 @@ body {
 }
 
 .App-header {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $white;
 
-  margin: 10vh 2em;
+  margin: 0 2em;
 }
