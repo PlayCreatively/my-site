@@ -13,9 +13,7 @@ const AboutMePage = () => {
         href="https://www.pinterest.com/alexanderorgeirsson/programming/"
       ></a> */}
 
-      <Chapter title="Images" boarder={false}></Chapter>
-      <ImageGallery urls={GetImages()}></ImageGallery>
-
+{/*
       <Chapter title="Aspirations" boarder={false}>
         <Chapter title="Digestable education">
           <p>
@@ -48,7 +46,7 @@ const AboutMePage = () => {
           <p>What is play, what's the point of play</p>
         </Chapter>
 
-        {/* <p>
+         <p>
           One of my many dreams is to make **education easier**. I’ve had to
           go through so many painful and outdated educational experiences for
           which I now have an urging thirst to abolish. One of the many things
@@ -68,8 +66,8 @@ const AboutMePage = () => {
           children's books**, in a way that both teaches the parent real wisdom,
           through the book’s symbolism, and will later be realized by the child
           later in its life.
-        </p> */}
-      </Chapter>
+        </p> 
+      </Chapter>*/}
     </div>
   );
 };
