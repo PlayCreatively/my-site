@@ -15,7 +15,7 @@
 
     &:hover {
       transform: scale(1.05);
-      fill: coral;
+      fill: $main-color;
       transition: 0.1s;
     }
   }

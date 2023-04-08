@@ -20,8 +20,8 @@
 	font-family: 'Supermercado One', cursive;
 */
 
-$dark-background: #18191d;
-$main-color: coral;
+$dark-background: #2a2827;
+$main-color: #ff8569;
 $secondary-color: #f7f0da;
 $white: #d3d3d3;
 
@@ -62,7 +62,7 @@ body {
   padding-left: 1.5em;
 
   > li {
-    color: coral;
+    color: $main-color;
   }
 
   li::marker {
@@ -75,12 +75,12 @@ body {
 }
 
 .Highlight {
-  color: coral;
+  color: $main-color;
   font-size: 1.2em;
 }
 
 .Name-header {
-  color: coral;
+  color: $main-color;
   user-select: none;
   font-family: "Fredoka";
   @media (prefers-reduced-motion: no-preference) {

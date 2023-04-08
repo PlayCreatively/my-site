@@ -1,4 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Fredoka&family=Fredoka+One&family=Indie+Flower&family=Roboto+Slab&family=Sacramento&family=Sansita+Swashed&family=Supermercado+One&display=swap");
+/*
+		cool header text
+	font-family: 'Acme', sans-serif;
+		clean handwriting
+	font-family: 'Caveat', cursive;
+		simplistic round text
+	font-family: 'Fredoka', sans-serif;
+		thich round header text
+	font-family: 'Fredoka One', cursive;
+		playful comic sans
+	font-family: 'Indie Flower', cursive;
+		clean paragraph text
+	font-family: 'Roboto Slab', serif;
+		Stylish handwriting for quoting
+	font-family: 'Sacramento', cursive;
+		stylish header text
+	font-family: 'Sansita Swashed', cursive;
+		round title text
+	font-family: 'Supermercado One', cursive;
+*/
+p {
+  font-family: "Roboto Slab";
+  color: #d3d3d3;
+  font-size: 2.5vh;
+}
+
+* {
+  color: #d3d3d3;
+}
+
+body {
+  background-color: #2a2827;
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root > :not(:first-child) {
+  width: 50rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.List-style {
+  font-family: Fredoka;
+  border-radius: 0.3em;
+  background: rgba(255, 255, 255, 0.1);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5em;
+  padding-left: 1.5em;
+}
+.List-style > li {
+  color: #ff8569;
+}
+.List-style li::marker {
+  color: rgba(255, 255, 255, 0.4);
+}
+.List-style ul li {
+  color: rgba(187, 177, 150, 0.639);
+}
+
+.Highlight {
+  color: #ff8569;
+  font-size: 1.2em;
+}
+
+.Name-header {
+  color: #ff8569;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: "Fredoka";
+}
+@media (prefers-reduced-motion: no-preference) {
+  .Name-header {
+    animation: Fade-in 1.2s;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #d3d3d3;
+  margin: 0 2em;
+}
+
 #links {
   display: flex;
   -moz-column-gap: 0.75em;
@@ -18,7 +116,7 @@
 }
 #links svg:hover {
   transform: scale(1.05);
-  fill: coral;
+  fill: #ff8569;
   transition: 0.1s;
 }
 
@@ -97,104 +195,6 @@
     transform: rotateZ(300deg);
   }
 }
-/*
-		cool header text
-	font-family: 'Acme', sans-serif;
-		clean handwriting
-	font-family: 'Caveat', cursive;
-		simplistic round text
-	font-family: 'Fredoka', sans-serif;
-		thich round header text
-	font-family: 'Fredoka One', cursive;
-		playful comic sans
-	font-family: 'Indie Flower', cursive;
-		clean paragraph text
-	font-family: 'Roboto Slab', serif;
-		Stylish handwriting for quoting
-	font-family: 'Sacramento', cursive;
-		stylish header text
-	font-family: 'Sansita Swashed', cursive;
-		round title text
-	font-family: 'Supermercado One', cursive;
-*/
-p {
-  font-family: "Roboto Slab";
-  color: #d3d3d3;
-  font-size: 2.5vh;
-}
-
-* {
-  color: #d3d3d3;
-}
-
-body {
-  background-color: #18191d;
-  margin: 0;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#root > :not(:first-child) {
-  width: 50rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.List-style {
-  font-family: Fredoka;
-  border-radius: 0.3em;
-  background: rgba(255, 255, 255, 0.1);
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0.5em;
-  padding-left: 1.5em;
-}
-.List-style > li {
-  color: coral;
-}
-.List-style li::marker {
-  color: rgba(255, 255, 255, 0.4);
-}
-.List-style ul li {
-  color: rgba(187, 177, 150, 0.639);
-}
-
-.Highlight {
-  color: coral;
-  font-size: 1.2em;
-}
-
-.Name-header {
-  color: coral;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  font-family: "Fredoka";
-}
-@media (prefers-reduced-motion: no-preference) {
-  .Name-header {
-    animation: Fade-in 1.2s;
-  }
-}
-
-.App {
-  text-align: center;
-}
-
-.App-header {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #d3d3d3;
-  margin: 0 2em;
-}
-
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -250,7 +250,7 @@ body {
 }
 .ImageGallery .button:hover .button-icon {
   transition: ease-in-out 200ms;
-  color: coral;
+  color: #ff8569;
   transform: translateX(0);
 }
 .ImageGallery .button-icon {
