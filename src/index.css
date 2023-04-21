@@ -25,7 +25,7 @@ p {
   font-size: 2.5vh;
 }
 
-* {
+:root {
   color: #d3d3d3;
 }
 
@@ -72,6 +72,7 @@ body {
 
 .Name-header {
   color: #ff8569;
+  font-size: xxx-large;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -88,12 +89,13 @@ body {
 }
 
 .App-header {
-  height: 90vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: #d3d3d3;
+  height: 90vh;
   margin: 0 2em;
 }
 
@@ -126,7 +128,7 @@ body {
 
 .avatar {
   animation: wobble 6s infinite alternate ease-in-out, blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
-  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -207,16 +209,25 @@ body {
   background: rgb(110, 110, 110);
 }
 
+div:has(> .ImageGallery) {
+  margin: 4rem 0;
+}
+
+.GalleryText {
+  font-family: "Fredoka";
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .ImageGallery {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   -webkit-user-drag: none;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 400px;
-  margin: 4rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 .ImageGallery img {
   max-width: 100%;
@@ -245,6 +256,7 @@ body {
   z-index: 1;
   background-color: hsla(0, 0%, 0%, 0);
   min-width: 45%;
+  cursor: pointer;
   display: flex;
   align-items: center;
 }

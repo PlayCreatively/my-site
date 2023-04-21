@@ -31,10 +31,16 @@ export default function ImageGallery({
   if (URLs === null) return <></>;
   else
     return (
-      <div className="ImageGallery">
-        <Button side="left" URLs={URLs}></Button>
-        <img src={URLs[index]}></img>
-        <Button side="right" URLs={URLs}></Button>
+      <div>
+        <div className="ImageGallery">
+          <Button side="left" URLs={URLs}></Button>
+          <img src={URLs[index]}></img>
+          <Button side="right" URLs={URLs}></Button>
+        </div>
+        <div className="GalleryText">
+          {index+1}/{URLs.length}
+
+        </div>
       </div>
     );
 }

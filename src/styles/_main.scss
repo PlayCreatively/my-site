@@ -31,7 +31,7 @@ p {
   font-size: 2.5vh;
 }
 
-* {
+:root {
   color: $white;
 }
 
@@ -81,6 +81,7 @@ body {
 
 .Name-header {
   color: $main-color;
+  font-size: xxx-large;
   user-select: none;
   font-family: "Fredoka";
   @media (prefers-reduced-motion: no-preference) {
@@ -93,12 +94,13 @@ body {
 }
 
 .App-header {
-  height: 90vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: $white;
 
+  height: 90vh;
   margin: 0 2em;
 }

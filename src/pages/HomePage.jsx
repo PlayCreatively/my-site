@@ -20,16 +20,11 @@ let links = {
 
 function HomePage() {
   return (
-    <div className="App Scroll-bar" style={{ position: "relative" }}>
+    <div className="App Scroll-bar">
       <header
         className="App-header"
-        style={{ flexDirection: "row", position: "relative" }}
       >
         <div
-          style={{
-            flexDirection: "column",
-            height: "8em",
-          }}
         >
           <img
             className="avatar"

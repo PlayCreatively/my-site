@@ -29,7 +29,7 @@
 .avatar {
   animation: wobble 6s infinite alternate ease-in-out,
     blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
-  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
   user-select: none;
   -webkit-user-drag: none;
 }

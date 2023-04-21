@@ -1,3 +1,13 @@
+div:has(>.ImageGallery) {
+    margin: 4rem 0;
+  } 
+
+.GalleryText {
+  font-family: 'Fredoka';
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .ImageGallery {
   $button-icon-overflow: 2rem;
   $buttonWidth: 45%;
@@ -6,11 +16,12 @@
 
   user-select: none;
   -webkit-user-drag: none;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 400px;
-  margin: 4rem 0;
+  
+    width: 100%;
+    height: 400px;
+    display : flex;
+    justify-content: space-between;
+
 
   img {
     max-width: 100%;
@@ -41,6 +52,7 @@
     z-index: 1;
     background-color: hsla(0, 0%, 0%, 0);
     min-width: $buttonWidth;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
@@ -60,3 +72,6 @@
     padding: 0 $button-icon-padding;
   }
 }
+
+
+
