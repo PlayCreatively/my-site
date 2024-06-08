@@ -9,7 +9,7 @@
 
   svg {
     height: 0.9em;
-    fill: whitesmoke;
+    fill: $secondary-color;
     float: left;
     transition: 0.3s;
 
@@ -27,11 +27,12 @@
 
 //My avatar logo//
 .avatar {
-  animation: wobble 6s infinite alternate ease-in-out,
-    blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
+  // animation: wobble 6s infinite alternate ease-in-out,
+  //   blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
   image-rendering: -webkit-optimize-contrast;
   user-select: none;
   -webkit-user-drag: none;
+  border-radius: 100%;
 }
 
 @keyframes blur-in {
@@ -54,6 +55,16 @@
   }
   to {
     transform: rotateZ(-3deg);
+  }
+}
+
+// scroll background image
+@keyframes scroll {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 200% 200%;
   }
 }
 

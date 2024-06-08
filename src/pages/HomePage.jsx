@@ -1,4 +1,5 @@
 import selfPortrait from "content/self portrait.png";
+import me from "content/me.jpg";
 import {
   GitHubLogo,
   TwitterLogo,
@@ -11,7 +12,7 @@ import ImageGallery from "components/ImageGallery";
 import GetImages from "components/GetImages";
 import Chapter from "components/reactComponents/Chapter";
 
-let links = {
+const links = {
   github: "https://github.com/PlayCreatively",
   twitter: "https://twitter.com/PlayCreatively",
   youtube: "https://www.youtube.com/channel/UCXUqdm8g8983N53-IEdkm0A",
@@ -21,29 +22,23 @@ let links = {
 function HomePage() {
   return (
     <div className="App Scroll-bar">
-      <header
-        className="App-header"
-      >
-        <div
-        >
-          <img
-            className="avatar"
-            src={selfPortrait}
-            height="400px"
-            // style={{ imageRendering: "pixelated" }}
-          />
+      // nav padding
+      <div style={{ height: "5vh" }}></div>
+      <header className="App-header">
+        <div>
+          <img className="avatar" src={me} height="400px" />
           <h1 className="Name-header">
             Alexander Freyr Þorgeirsson
             <div id="links">
               <a href={links.github}>
                 <GitHubLogo />
               </a>
-              <a href={links.twitter}>
+              {/* <a href={links.twitter}>
                 <TwitterLogo />
               </a>
               <a href={links.youtube}>
                 <YoutubeLogo />
-              </a>
+              </a> */}
               <a href={links.itch}>
                 <ItchLogo />
               </a>

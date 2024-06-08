@@ -7,7 +7,7 @@ function App() {
     <Router>
       <nav>
         <a href="/">Home</a>
-        <a href="/about-me">About me</a>
+        {/* <a href="/about-me">About me</a> */}
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -15,9 +15,16 @@ function App() {
         <Route
           path="*"
           element={
-            <p style={{ margin: "auto", fontSize: "10vh" }}>
-              Þessi síða er ekki til.
-            </p>
+            <h1
+              style={{
+                margin: "auto",
+                fontSize: "10vh",
+                position: "relative",
+                top: "50vh",
+              }}
+            >
+              Path does not exist :/
+            </h1>
           }
         />
       </Routes>

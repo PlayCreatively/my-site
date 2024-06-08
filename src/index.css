@@ -19,18 +19,19 @@
 		round title text
 	font-family: 'Supermercado One', cursive;
 */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
 p {
-  font-family: "Roboto Slab";
   color: #d3d3d3;
   font-size: 2.5vh;
 }
 
 :root {
+  font-family: "Roboto Slab";
   color: #d3d3d3;
 }
 
 body {
-  background-color: #2a2827;
+  background-color: #2a2725;
   margin: 0;
 }
 
@@ -40,7 +41,7 @@ body {
   align-items: center;
 }
 
-#root > :not(:first-child) {
+#root > :not(nav) {
   width: 50rem;
   margin-right: auto;
   margin-left: auto;
@@ -112,7 +113,7 @@ body {
 }
 #links svg {
   height: 0.9em;
-  fill: whitesmoke;
+  fill: #f7f0da;
   float: left;
   transition: 0.3s;
 }
@@ -127,12 +128,12 @@ body {
 }
 
 .avatar {
-  animation: wobble 6s infinite alternate ease-in-out, blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
   image-rendering: -webkit-optimize-contrast;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   -webkit-user-drag: none;
+  border-radius: 100%;
 }
 
 @keyframes blur-in {
@@ -153,6 +154,14 @@ body {
   }
   to {
     transform: rotateZ(-3deg);
+  }
+}
+@keyframes scroll {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 200% 200%;
   }
 }
 .Canvas {
@@ -279,8 +288,9 @@ div:has(> .ImageGallery) {
   width: 100%;
 }
 .Chapter .Chapter-header {
-  color: whitesmoke;
+  color: #f7f0da;
   font-size: 3em;
+  text-transform: capitalize;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   cursor: pointer;
 }
@@ -302,7 +312,7 @@ div:has(> .ImageGallery) {
 
 .Chapter-header:hover::before {
   transition: 200ms;
-  color: whitesmoke;
+  color: #ff8569;
   transform: translateX(20px);
   left: -0.1em;
 }
@@ -327,12 +337,14 @@ div:has(> .ImageGallery) {
 }
 
 nav {
-  background-color: hsla(0, 0%, 50%, 0.18);
-  margin-bottom: 1em;
+  background-color: color-mix(in srgb, #2a2725 93%, white);
   display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 nav a {
-  color: rgb(226, 226, 226);
+  color: #f7f0da;
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
@@ -340,7 +352,7 @@ nav a {
   font-family: sans-serif;
 }
 nav a:hover {
-  background-color: rgba(0, 0, 0, 0.16);
+  background-color: color-mix(in srgb, color-mix(in srgb, #2a2725 93%, white) 85%, black);
 }
 
 .ScrollText {
@@ -380,4 +392,37 @@ nav a:hover {
 /* Handle on hover */
 .ScrollText::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.ExperienceSection {
+  background-color: rgba(255, 131, 92, 0.1882352941);
+  display: grid;
+  justify-content: center;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 0.3em;
+}
+.ExperienceSection :has(> .TagGroup) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ExperienceSection .TagGroup {
+  display: flex;
+  flex-direction: row;
+  padding: 0.6em;
+}
+.ExperienceSection .TagGroup .Tag {
+  font-family: monospace;
+  font-size: 1rem;
+  border-radius: 0.3em;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 2em;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.3em 0.5em;
+  margin-right: 1em;
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 3px 2px 2px 1px;
+  cursor: default;
 }/*# sourceMappingURL=index.css.map */

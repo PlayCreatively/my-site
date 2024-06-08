@@ -6,8 +6,9 @@ $headerSize: 3em;
   width: 100%;
 
   .Chapter-header {
-    color: whitesmoke;
+    color: $secondary-color;
     font-size: $headerSize;
+    text-transform: capitalize;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     cursor: pointer;
@@ -35,7 +36,7 @@ $headerSize: 3em;
 
 .Chapter-header:hover::before {
   transition: 200ms;
-  color: whitesmoke;
+  color: $main-color;
   transform: translateX(20px);
   left: -0.1em;
 }

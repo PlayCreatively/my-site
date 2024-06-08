@@ -20,7 +20,8 @@
 	font-family: 'Supermercado One', cursive;
 */
 
-$dark-background: #2a2827;
+$dark-background: #2a2725;
+$background-light-1: color-mix(in srgb, $dark-background 93%, white);
 $main-color: #ff8569;
 $secondary-color: #f7f0da;
 $white: #d3d3d3;
@@ -32,6 +33,7 @@ p {
 }
 
 :root {
+  font-family: "Roboto Slab";
   color: $white;
 }
 
@@ -47,7 +49,7 @@ body {
 }
 
 // all but nav
-#root > :not(:first-child) {
+#root > :not(nav) {
   width: 50rem;
   margin-right: auto;
   margin-left: auto;
