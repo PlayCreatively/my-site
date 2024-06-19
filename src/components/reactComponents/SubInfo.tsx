@@ -1,25 +1,58 @@
-import { useState } from "react";
-// import { useEffect } from "react";
-// import { useRef } from "react";
+import { CSSProperties, useState } from "react";
 
 interface ISubInfo {
   subInfo: HTMLElement;
+  hoverStyle?: React.CSSProperties;
 }
 
-const SubInfo: React.FC<ISubInfo> = ({ children, subInfo }) => {
+const SubInfo: React.FC<ISubInfo> = ({ children, subInfo, hoverStyle }) => {
   const [isVisible, setIsVisible] = useState(false);
-  var subInfoEl;
+  const [position, setPosition] = useState({ x: 0, y: 0 }); // Add state for position
 
-  subInfoEl = isVisible ? subInfo : null;
+  const subInfoEl = isVisible ? (
+    <span
+      style={{
+        position: "absolute",
+        top: `${position.y - 40}px`,
+        left: `${position.x}px`,
+        background: "white",
+        color: "black",
+        padding: ".3em",
+        fontSize: "11px",
+        font: "message-box",
+        borderRadius: ".1em",
+      }}
+    >
+      {subInfo}
+    </span>
+  ) : null;
+
+  const style: CSSProperties = {
+    ...(isVisible ? hoverStyle : {}),
+    ...{ cursor: "help" },
+  }; // Add cursor pointer to style
+
+  const handleMouseOver = (event: React.MouseEvent<HTMLSpanElement>) => {
+    setPosition({
+      x:
+        event.currentTarget.getBoundingClientRect().left +
+        event.currentTarget.getBoundingClientRect().width +
+        window.scrollX,
+      y: event.currentTarget.getBoundingClientRect().top + window.scrollY,
+    }); // Update position on mouse over
+    setIsVisible(true);
+  };
+
   return (
-    <div
+    <span
       className="Sub-info"
-      onMouseOver={() => setIsVisible(true)}
+      onMouseOver={handleMouseOver}
       onMouseOut={() => setIsVisible(false)}
+      style={style}
     >
       {children}
-      <div style={{ position: "absolute", right: "2em" }}>{subInfoEl}</div>
-    </div>
+      {subInfoEl}
+    </span>
   );
 };
 
