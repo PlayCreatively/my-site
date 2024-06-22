@@ -5,10 +5,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <nav>
+      {/* <nav>
         <a href="/">Home</a>
-        {/* <a href="/about-me">About me</a> */}
+        <a href="/about-me">About me</a>
       </nav>
+      <div style={{ height: "7vh" }}></div> */}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-me" element={<AboutMePage />} />

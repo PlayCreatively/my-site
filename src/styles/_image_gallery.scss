@@ -1,9 +1,5 @@
-div:has(>.ImageGallery) {
-    margin: 4rem 0;
-  } 
-
 .GalleryText {
-  font-family: 'Fredoka';
+  font-family: "Fredoka";
   text-align: center;
   margin-top: 1rem;
 }
@@ -16,24 +12,27 @@ div:has(>.ImageGallery) {
 
   user-select: none;
   -webkit-user-drag: none;
-  
-    width: 100%;
-    height: 400px;
-    display : flex;
-    justify-content: space-between;
 
+  width: 75%;
+  margin: auto;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     margin: 0% (-$buttonWidth);
+    border-radius: 0.3vw;
   }
 
   .left-button {
     justify-content: start;
     position: relative;
     right: $button-offset;
+    height: 100%;
     .button-icon {
       transform: translateX($button-icon-overflow);
     }
@@ -43,6 +42,7 @@ div:has(>.ImageGallery) {
     justify-content: end;
     position: relative;
     left: $button-offset;
+    height: 100%;
     .button-icon {
       transform: translateX(-$button-icon-overflow);
     }
@@ -72,6 +72,3 @@ div:has(>.ImageGallery) {
     padding: 0 $button-icon-padding;
   }
 }
-
-
-

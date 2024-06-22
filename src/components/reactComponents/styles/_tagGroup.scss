@@ -1,0 +1,33 @@
+.ExperienceSection {
+  background-color: #ff835c30;
+
+  display: grid;
+  justify-content: center;
+  width: max-content;
+  border-radius: 0.3em;
+
+  :has(> .TagGroup) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .TagGroup {
+    display: flex;
+    flex-direction: row;
+    padding: 0.6em;
+
+    .Tag {
+      font-family: monospace;
+      font-size: 1rem;
+      border-radius: 0.3em;
+      width: fit-content;
+      min-width: 2em;
+      height: fit-content;
+      padding: 0.3em 0.5em;
+      margin-right: 1em;
+      box-shadow: #0000003d 3px 2px 2px 1px;
+      cursor: default;
+    }
+  }
+}

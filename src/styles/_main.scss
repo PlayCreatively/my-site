@@ -27,7 +27,6 @@ $secondary-color: #f7f0da;
 $white: #d3d3d3;
 
 p {
-  font-family: "Roboto Slab";
   color: $white;
   font-size: 2.5vh;
 }
@@ -40,19 +39,19 @@ p {
 body {
   background-color: $dark-background;
   margin: 0;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow-x: hidden;
 }
 
 // all but nav
-#root > :not(nav) {
-  width: 50rem;
+.App > :not(nav) {
+  max-width: 50rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+.App > :not(nav, .Chapter) {
+  min-height: 100vh;
+  align-items: center;
 }
 
 .List-style {

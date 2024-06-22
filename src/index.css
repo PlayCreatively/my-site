@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Fredoka&family=Fredoka+One&family=Indie+Flower&family=Roboto+Slab&family=Sacramento&family=Sansita+Swashed&family=Supermercado+One&display=swap");
 /*
 		cool header text
@@ -19,7 +20,6 @@
 		round title text
 	font-family: 'Supermercado One', cursive;
 */
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
 p {
   color: #d3d3d3;
   font-size: 2.5vh;
@@ -33,18 +33,18 @@ p {
 body {
   background-color: #2a2725;
   margin: 0;
+  overflow-x: hidden;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#root > :not(nav) {
-  width: 50rem;
+.App > :not(nav) {
+  max-width: 50rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+.App > :not(nav, .Chapter) {
+  min-height: 100vh;
+  align-items: center;
 }
 
 .List-style {
@@ -218,10 +218,6 @@ body {
   background: rgb(110, 110, 110);
 }
 
-div:has(> .ImageGallery) {
-  margin: 4rem 0;
-}
-
 .GalleryText {
   font-family: "Fredoka";
   text-align: center;
@@ -233,10 +229,12 @@ div:has(> .ImageGallery) {
      -moz-user-select: none;
           user-select: none;
   -webkit-user-drag: none;
-  width: 100%;
-  height: 400px;
+  width: 75%;
+  margin: auto;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .ImageGallery img {
   max-width: 100%;
@@ -244,11 +242,13 @@ div:has(> .ImageGallery) {
   -o-object-fit: contain;
      object-fit: contain;
   margin: 0% -45%;
+  border-radius: 0.3vw;
 }
 .ImageGallery .left-button {
   justify-content: start;
   position: relative;
   right: calc(3rem + 37.6px);
+  height: 100%;
 }
 .ImageGallery .left-button .button-icon {
   transform: translateX(2rem);
@@ -257,6 +257,7 @@ div:has(> .ImageGallery) {
   justify-content: end;
   position: relative;
   left: calc(3rem + 37.6px);
+  height: 100%;
 }
 .ImageGallery .right-button .button-icon {
   transform: translateX(-2rem);
@@ -283,25 +284,29 @@ div:has(> .ImageGallery) {
 }
 
 .Chapter {
-  margin-top: 2rem;
   text-align: start;
   width: 100%;
 }
 .Chapter .Chapter-header {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid hsla(0, 0%, 100%, 0.15);
+}
+.Chapter .Chapter-content {
+  min-height: 100vh;
+  align-content: center;
+}
+.Chapter .Chapter-header-text {
   color: #f7f0da;
-  font-size: 3em;
+  font-size: 2.5rem;
   text-transform: capitalize;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   cursor: pointer;
-}
-.Chapter .Chapter-content {
-  border-top: 2px solid hsla(0, 0%, 100%, 0.15);
-}
-.Chapter .Chapter .Chapter-header {
-  font-size: 2.25em;
+  display: block;
+  width: 100%;
 }
 
-.Chapter-header::before {
+.Chapter-header-text::before {
   color: transparent;
   position: relative;
   transition: 200ms;
@@ -310,7 +315,7 @@ div:has(> .ImageGallery) {
   content: "#";
 }
 
-.Chapter-header:hover::before {
+.Chapter-header-text:hover::before {
   transition: 200ms;
   color: #ff8569;
   transform: translateX(20px);
@@ -348,7 +353,7 @@ nav a {
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
-  padding: 0.6em 1em;
+  padding: 2vh 1em;
   font-family: sans-serif;
 }
 nav a:hover {
@@ -425,4 +430,94 @@ nav a:hover {
   margin-right: 1em;
   box-shadow: rgba(0, 0, 0, 0.2392156863) 3px 2px 2px 1px;
   cursor: default;
+}
+
+.project-container {
+  display: flex;
+  max-width: max(80vw, 50rem) !important;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #ff8569;
+  cursor: default;
+  padding: 2vw;
+}
+.project-container .image-section {
+  flex: 2;
+}
+.project-container .game-image {
+  width: 100%;
+  height: auto;
+  box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3rem;
+}
+.project-container .text-section {
+  flex: 1;
+  text-align: start;
+}
+.project-container ::first-letter {
+  text-transform: capitalize;
+}
+.project-container h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+.project-container p {
+  font-size: unset;
+}
+.project-container .tags {
+  margin: 10px 0;
+}
+.project-container .tag {
+  display: inline-block;
+  background-color: #d9534f;
+  color: white;
+  text-transform: capitalize;
+  padding: 4px 8px;
+  margin: 4px 0;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.project-container ul {
+  list-style-type: none;
+  padding-inline: 0;
+}
+.project-container ul :not(:last-child) {
+  margin-bottom: 5px;
+}
+.project-container ul li > span::before {
+  content: "◦";
+  padding-right: 0.5em;
+}
+.project-container ul li > span.expandable {
+  cursor: pointer;
+}
+.project-container ul li > span.expandable:not(.expanded)::before {
+  content: "•";
+}
+.project-container .download {
+  margin-top: 20px;
+}
+.project-container .download a {
+  color: #337ab7;
+  text-decoration: none;
+}
+.project-container .download a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 50rem) {
+  .image-section {
+    padding-bottom: 2vw;
+  }
+  .project-container {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 50rem) {
+  .image-section {
+    padding-right: 2vw;
+  }
+  .project-container {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=index.css.map */

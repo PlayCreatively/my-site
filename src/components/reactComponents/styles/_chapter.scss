@@ -1,30 +1,30 @@
-$headerSize: 3em;
-
 .Chapter {
-  margin-top: 2rem;
   text-align: start;
   width: 100%;
 
   .Chapter-header {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid hsl(0, 0%, 100%, 0.15);
+  }
+
+  .Chapter-content {
+    min-height: 100vh;
+    align-content: center;
+  }
+  .Chapter-header-text {
     color: $secondary-color;
-    font-size: $headerSize;
+    font-size: 2.5rem;
     text-transform: capitalize;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     cursor: pointer;
-  }
-  .Chapter-content {
-    border-top: 2px solid hsl(0, 0%, 100%, 0.15);
-  }
-
-  .Chapter {
-    .Chapter-header {
-      font-size: $headerSize * 0.75;
-    }
+    display: block;
+    width: 100%;
   }
 }
 
-.Chapter-header::before {
+.Chapter-header-text::before {
   color: transparent;
   position: relative;
   transition: 200ms;
@@ -34,7 +34,7 @@ $headerSize: 3em;
   content: "#";
 }
 
-.Chapter-header:hover::before {
+.Chapter-header-text:hover::before {
   transition: 200ms;
   color: $main-color;
   transform: translateX(20px);

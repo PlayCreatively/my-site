@@ -1,0 +1,23 @@
+[
+	{
+		"title": "SPLISH-SPLASH SUBMARINE (2024)",
+		"description": "For this university project, I served as the lead programmer and leveraged my 7 years of prior Unity experience. I focused on creating efficient tooling and a project structure that facilitated fast and frictionless iteration for the entire team.",
+		"video": "splish-splash-submarine trailer.mp4",
+		"image": "https://img.itch.zone/aW1hZ2UvMjUxNDU3Ni8xNTMzMzk2OC5wbmc=/original/0xrdez.png",
+		"contributions": [
+			{
+				"title": "Tooling",
+				"description": "Created a custom tool for the level designer to easily create and edit levels."
+			},
+			"Implemented all major systems"
+		],
+		"tags": [
+			"Systems Design",
+			"Programming",
+			"Game Design"
+		],
+		"downloadLinks": {
+			"itch": "https://twilightdice.itch.io/splish-splash-submarine"
+		}
+	}
+]
