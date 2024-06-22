@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function ImageGallery({
   urls,
 }: {
-  urls: string[] | Promise<string[]>;
+  urls?: string[] | Promise<string[]>;
 }) {
   const [index, setIndex] = useState(0);
   const [URLs, setURLs] = useState(Array.isArray(urls) ? urls : null);
@@ -31,16 +31,15 @@ export default function ImageGallery({
   if (URLs === null) return <></>;
   else
     return (
-      <div>
+      <>
         <div className="ImageGallery">
           <Button side="left" URLs={URLs}></Button>
           <img src={URLs[index]}></img>
           <Button side="right" URLs={URLs}></Button>
         </div>
         <div className="GalleryText">
-          {index+1}/{URLs.length}
-
+          {index + 1}/{URLs.length}
         </div>
-      </div>
+      </>
     );
 }

@@ -1,0 +1,115 @@
+.project-container {
+  display: flex;
+  //   width: 80%;
+  max-width: max(80vw, 50rem) !important;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: $main-color;
+  cursor: default;
+  //   align-items: center;
+  padding: 2vw;
+
+  .image-section {
+    flex: 2;
+  }
+
+  .game-image {
+    width: 100%;
+    height: auto;
+    box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
+    border-radius: 0.3rem;
+  }
+
+  .text-section {
+    flex: 1;
+    text-align: start;
+  }
+
+  ::first-letter {
+    text-transform: capitalize;
+  }
+
+  h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: unset;
+  }
+
+  .tags {
+    margin: 10px 0;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: #d9534f;
+    color: white;
+    text-transform: capitalize;
+    padding: 4px 8px;
+    margin: 4px 0;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-inline: 0;
+
+    :not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    li > span::before {
+      content: "◦";
+      padding-right: 0.5em;
+    }
+
+    li > span.expandable {
+      cursor: pointer;
+    }
+
+    li > span.expandable:not(.expanded)::before {
+      content: "•";
+    }
+  }
+
+  .download {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 0.95em;
+  }
+
+  .download a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+
+  .download a:hover {
+    text-decoration: underline;
+  }
+}
+
+.project-container > * {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 50rem) {
+  .image-section {
+    padding-bottom: 2vw;
+  }
+  .project-container > * {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 50rem) {
+  .image-section {
+    padding-right: 2vw;
+  }
+  .project-container > * {
+    flex-direction: row;
+  }
+}

@@ -9,12 +9,16 @@ export default function GetImages(): Promise<string[]> {
 
   return fetch(url)
     .then((res) => res.json())
-    .then((data) =>
-      data
-        .filter(
-          (item) =>
-            item.type === "file" && item.name.match(/\.(png|jpg|jpeg|gif)$/)
-        )
-        .map((item) => item.download_url)
-    );
+    .then((data) => {
+      if (Array.isArray(data)) {
+        return data
+          .filter(
+            (item: { type: string; name: string }) =>
+              item.type === "file" && item.name.match(/\.(png|jpg|jpeg|gif)$/)
+          )
+          .map((item) => item.download_url);
+      } else {
+        return null;
+      }
+    });
 }
