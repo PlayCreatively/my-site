@@ -1,6 +1,4 @@
 import selfPortrait from "content/self portrait.png";
-import me from "content/me.jpg";
-import ProjectsData from "content/ProjectsData.json";
 import {
   GitHubLogo,
   TwitterLogo,
@@ -12,7 +10,7 @@ import { draw } from "scripts/DustParticles";
 import ImageGallery from "components/ImageGallery";
 import GetImages from "components/GetImages";
 import Chapter from "components/reactComponents/Chapter";
-import Project from "components/Project";
+import ProjectsSwiper from "components/ProjectsSwiper";
 
 const links = {
   github: "https://github.com/PlayCreatively",
@@ -26,7 +24,7 @@ function HomePage() {
     <div className="App Scroll-bar">
       <header className="App-header">
         <div>
-          <img className="avatar" src={me} height="400px" />
+          <img className="avatar" src="me.jpg" />
           <h1 className="Name-header">
             Alexander Freyr Þorgeirsson
             <div id="links">
@@ -47,9 +45,9 @@ function HomePage() {
         </div>
       </header>
       {/* <Canvas id="bg" draw={draw} /> */}
-      {ProjectsData.map((project) => (
-        <Project key={project.title} {...project} />
-      ))}
+      <div style={{ maxWidth: "calc(96vw - 30px)" }}>
+        <ProjectsSwiper />
+      </div>
       <Chapter title="Drawings">
         <ImageGallery urls={GetImages()} />
       </Chapter>

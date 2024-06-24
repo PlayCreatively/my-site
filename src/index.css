@@ -28,6 +28,7 @@ p {
 :root {
   font-family: "Roboto Slab";
   color: #d3d3d3;
+  --main-color: #ff8569;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
 }
 
 .App > :not(nav) {
-  max-width: 50rem;
+  max-width: calc(90vw - 30px);
   margin-right: auto;
   margin-left: auto;
 }
@@ -129,6 +130,7 @@ body {
 
 .avatar {
   image-rendering: -webkit-optimize-contrast;
+  max-width: min(90vw, 400px);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -434,12 +436,10 @@ nav a:hover {
 
 .project-container {
   display: flex;
-  max-width: max(80vw, 50rem) !important;
   margin: auto;
   font-family: Arial, sans-serif;
   color: #ff8569;
   cursor: default;
-  padding: 2vw;
 }
 .project-container .image-section {
   flex: 2;
@@ -481,18 +481,33 @@ nav a:hover {
   list-style-type: none;
   padding-inline: 0;
 }
-.project-container ul :not(:last-child) {
+.project-container ul li {
+  background-color: rgba(0, 0, 0, 0.1411764706);
+  padding: 0.3em;
+  border-radius: 0.2em;
+}
+.project-container ul li:not(:last-child, .expanded) {
   margin-bottom: 5px;
 }
 .project-container ul li > span::before {
-  content: "◦";
+  content: "•";
   padding-right: 0.5em;
 }
-.project-container ul li > span.expandable {
+.project-container ul li.expandable {
   cursor: pointer;
 }
-.project-container ul li > span.expandable:not(.expanded)::before {
-  content: "•";
+.project-container ul li.expandable:not(.expanded) > svg {
+  rotate: 180deg;
+}
+.project-container ul li > svg {
+  width: auto;
+  height: 1em;
+  stroke: #ff8569;
+  float: right;
+  margin: 1px;
+}
+.project-container ul li > svg > path {
+  fill: #ff8569;
 }
 .project-container .download {
   margin-top: 20px;
@@ -518,6 +533,7 @@ nav a:hover {
   }
   .project-container > * {
     flex-direction: column;
+    padding: 5px;
   }
 }
 @media only screen and (min-width: 50rem) {
@@ -526,12 +542,16 @@ nav a:hover {
   }
   .project-container > * {
     flex-direction: row;
+    padding: 4vw;
   }
 }
-.VerticalSlides {
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  display: -webkit-box;
-  max-width: max(80vw, 50rem) !important;
-  margin: auto;
+@media only screen and (max-width: 50rem) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    visibility: hidden !important;
+    display: none !important;
+  }
+  .swiper-button-prev {
+    visibility: hidden !important;
+  }
 }/*# sourceMappingURL=index.css.map */

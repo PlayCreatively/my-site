@@ -1,13 +1,10 @@
 .project-container {
   display: flex;
-  //   width: 80%;
-  max-width: max(80vw, 50rem) !important;
   margin: auto;
   font-family: Arial, sans-serif;
   color: $main-color;
   cursor: default;
   //   align-items: center;
-  padding: 2vw;
 
   .image-section {
     flex: 2;
@@ -57,21 +54,41 @@
     list-style-type: none;
     padding-inline: 0;
 
-    :not(:last-child) {
+    li {
+      background-color: #00000024;
+      padding: 0.3em;
+      border-radius: 0.2em;
+    }
+
+    li:not(:last-child, .expanded) {
       margin-bottom: 5px;
     }
 
     li > span::before {
-      content: "◦";
+      content: "•";
       padding-right: 0.5em;
     }
 
-    li > span.expandable {
+    li.expandable {
       cursor: pointer;
+      // &:hover {
+      //   background-color: #00000027 !important;
+      // }
     }
 
-    li > span.expandable:not(.expanded)::before {
-      content: "•";
+    li.expandable:not(.expanded) > svg {
+      rotate: 180deg;
+    }
+
+    li > svg {
+      > path {
+        fill: $main-color;
+      }
+      width: auto;
+      height: 1em;
+      stroke: $main-color;
+      float: right;
+      margin: 1px;
     }
   }
 
@@ -102,6 +119,7 @@
   }
   .project-container > * {
     flex-direction: column;
+    padding: 5px;
   }
 }
 
@@ -111,5 +129,6 @@
   }
   .project-container > * {
     flex-direction: row;
+    padding: 4vw;
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { DownArrow } from "../content/down-arrow.jsx";
 
 interface ProjectProps {
   video?: string;
@@ -54,26 +55,36 @@ const Project: React.FC<ProjectProps> = ({
                 contribution: string | { title: string; description: string },
                 index: number
               ) => (
-                <li key={index}>
-                  {typeof contribution === "string" ? (
-                    <span>{contribution}</span>
-                  ) : (
-                    <>
-                      <span
-                        className={
-                          "expandable" +
+                <>
+                  <li
+                    key={index}
+                    onClick={
+                      typeof contribution === "string"
+                        ? undefined
+                        : () => handleExpand(index)
+                    }
+                    className={
+                      typeof contribution === "string"
+                        ? undefined
+                        : "expandable" +
                           (expandedIndex === index ? " expanded" : "")
-                        }
-                        onClick={() => handleExpand(index)}
-                      >
-                        {contribution.title}
-                      </span>
-                      {expandedIndex === index && (
-                        <p>{contribution.description}</p>
-                      )}
-                    </>
+                    }
+                  >
+                    {typeof contribution === "string" ? (
+                      <span>{contribution}</span>
+                    ) : (
+                      <>
+                        <span>{contribution.title}</span>
+                        {DownArrow}
+                      </>
+                    )}
+                  </li>
+                  {typeof contribution !== "string" ? (
+                    expandedIndex === index && <p>{contribution.description}</p>
+                  ) : (
+                    <></>
                   )}
-                </li>
+                </>
               )
             )}
           </ul>

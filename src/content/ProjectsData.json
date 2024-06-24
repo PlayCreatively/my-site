@@ -19,5 +19,18 @@
 		"downloadLinks": {
 			"itch": "https://twilightdice.itch.io/splish-splash-submarine"
 		}
+	},
+	{
+		"title": "Alzheimer's (2023)",
+		"description": "...",
+		"image": "https://img.itch.zone/aW1nLzE0MjI2NDE0LnBuZw==/315x250%23c/TVRzm9.png",
+		"contributions": [],
+		"tags": [
+			"Programming",
+			"Game Design"
+		],
+		"downloadLinks": {
+			"itch": "https://playcreatively.itch.io/alzheimers"
+		}
 	}
 ]

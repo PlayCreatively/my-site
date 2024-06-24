@@ -5,15 +5,15 @@ import Chapter from "components/reactComponents/Chapter";
 const AboutMePage = () => {
   return (
     <div className="page">
-      {/* <a
+      <a
         data-pin-do="embedBoard"
         data-pin-board-width="400"
         data-pin-scale-height="240"
         data-pin-scale-width="80"
         href="https://www.pinterest.com/alexanderorgeirsson/programming/"
-      ></a> */}
+      ></a>
 
-{/*
+
       <Chapter title="Aspirations" boarder={false}>
         <Chapter title="Digestable education">
           <p>
@@ -67,7 +67,7 @@ const AboutMePage = () => {
           through the book’s symbolism, and will later be realized by the child
           later in its life.
         </p> 
-      </Chapter>*/}
+      </Chapter>
     </div>
   );
 };
