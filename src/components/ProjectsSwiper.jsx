@@ -30,6 +30,7 @@ const ProjectsSwiper = () => {
       // scrollbar="true"
       hash-navigation-watch-state="true"
       pagination-clickable="true"
+      keyboard="true"
       style={{
         "--swiper-theme-color": "var(--main-color)",
         "--swiper-navigation-size": "30px",
