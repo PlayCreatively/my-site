@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { register as swiperRegister } from "swiper/element/bundle";
-import ProjectsData from "content/ProjectsData.json";
-import Project from "components/Project";
+import React, { useState, useEffect, useRef } from "react";
+import Swiper from "swiper";
 
-const ProjectsSwiper = () => {
-  // register Swiper custom elements
-  swiperRegister();
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "swiper-container": any;
+      "swiper-slide": any;
+      // add other swiper elements here
+    }
+  }
+}
 
+interface SwiperProps {}
+
+const ProjectsSwiper: React.FC<SwiperProps> = ({ children, ...props }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const swiperRef = useRef<Swiper | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,10 +28,11 @@ const ProjectsSwiper = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [swiperRef]);
 
   return (
     <swiper-container
+      ref={swiperRef}
       speed="500"
       navigation={!isMobile}
       pagination="true"
@@ -31,21 +40,16 @@ const ProjectsSwiper = () => {
       hash-navigation-watch-state="true"
       pagination-clickable="true"
       keyboard="true"
+      centeredSlides="true"
+      slides-per-view="auto"
+      {...props}
       style={{
         "--swiper-theme-color": "var(--main-color)",
         "--swiper-navigation-size": "30px",
         "--swiper-navigation-sides-offset": 0,
       }}
     >
-      {ProjectsData.map((project) => (
-        <swiper-slide
-          data-hash={project.title
-            .substring(0, project.title.indexOf(" ("))
-            .replaceAll(" ", "-")}
-        >
-          <Project key={project.title} {...project} />
-        </swiper-slide>
-      ))}
+      {children}
     </swiper-container>
   );
 };

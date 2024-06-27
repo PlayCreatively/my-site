@@ -1,9 +1,16 @@
 interface IChapter {
   title: string;
+  className?: string;
   boarder?: boolean;
 }
 
-const Chapter: React.FC<IChapter> = ({ title, boarder, children }) => {
+const Chapter: React.FC<IChapter> = ({
+  title,
+  boarder,
+  className = "",
+  children,
+  ...props
+}) => {
   function handleClick() {
     document.location.href = "#" + title.toLowerCase().replaceAll(" ", "-");
   }
@@ -11,7 +18,7 @@ const Chapter: React.FC<IChapter> = ({ title, boarder, children }) => {
   const style = boarder ?? true ? {} : { borderTop: "none" };
 
   return (
-    <div className="Chapter">
+    <div className={"Chapter " + className} {...props}>
       <h1 className="Chapter-header">
         <span className="Chapter-header-text" onClick={handleClick}>
           {title}

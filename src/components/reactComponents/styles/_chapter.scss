@@ -1,10 +1,11 @@
 .Chapter {
   text-align: start;
-  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
 
   .Chapter-header {
     padding-bottom: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     border-bottom: 2px solid hsl(0, 0%, 100%, 0.15);
   }
 

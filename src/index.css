@@ -37,7 +37,7 @@ body {
   overflow-x: hidden;
 }
 
-.App > :not(nav) {
+.default-width {
   max-width: calc(90vw - 30px);
   margin-right: auto;
   margin-left: auto;
@@ -101,6 +101,16 @@ body {
   margin: 0 2em;
 }
 
+@media screen and (max-width: 50rem) {
+  swiper-container img {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 50rem) {
+  swiper-container img {
+    max-width: 90%;
+  }
+}
 #links {
   display: flex;
   -moz-column-gap: 0.75em;
@@ -287,11 +297,12 @@ body {
 
 .Chapter {
   text-align: start;
-  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
 }
 .Chapter .Chapter-header {
   padding-bottom: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   border-bottom: 2px solid hsla(0, 0%, 100%, 0.15);
 }
 .Chapter .Chapter-content {
@@ -543,15 +554,5 @@ nav a:hover {
   .project-container > * {
     flex-direction: row;
     padding: 4vw;
-  }
-}
-@media only screen and (max-width: 50rem) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    visibility: hidden !important;
-    display: none !important;
-  }
-  .swiper-button-prev {
-    visibility: hidden !important;
   }
 }/*# sourceMappingURL=index.css.map */

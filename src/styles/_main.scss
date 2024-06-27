@@ -43,8 +43,7 @@ body {
   overflow-x: hidden;
 }
 
-// all but nav
-.App > :not(nav) {
+.default-width {
   max-width: calc(90vw - 30px);
   margin-right: auto;
   margin-left: auto;
@@ -105,4 +104,16 @@ body {
 
   height: 90vh;
   margin: 0 2em;
+}
+
+// Image gallery styles
+@media screen and (max-width: 50rem) {
+  swiper-container img {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 50rem) {
+  swiper-container img {
+    max-width: 90%;
+  }
 }
