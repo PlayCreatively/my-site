@@ -96,6 +96,7 @@
     margin-top: 20px;
     font-style: italic;
     font-size: 0.95em;
+    gap: 1.25em;
   }
 
   .download a {
@@ -120,6 +121,7 @@
   .project-container > * {
     flex-direction: column;
     padding: 5px;
+    padding-bottom: 4vh;
   }
 }
 

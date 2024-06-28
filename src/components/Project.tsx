@@ -1,5 +1,6 @@
 import React from "react";
 import { DownArrow } from "../content/down-arrow.jsx";
+import { ItchLogo, GitHubLogo } from "../content/SVGlogos.jsx";
 
 interface ProjectProps {
   video?: string;
@@ -10,6 +11,7 @@ interface ProjectProps {
   contributions: string[] | [{ title: string; description: string }];
   downloadLinks?: {
     itch: string;
+    github: string;
     appStore: string;
     googlePlay: string;
   };
@@ -89,22 +91,14 @@ const Project: React.FC<ProjectProps> = ({
             )}
           </ul>
           {downloadLinks && (
-            <p className="download">
-              Download:{" "}
-              {downloadLinks.itch && <a href={downloadLinks.itch}>Itch</a>}
-              {downloadLinks.appStore && (
-                <>
-                  {", "}
-                  <a href={downloadLinks.appStore}>App Store</a>
-                </>
+            <div className="download">
+              {downloadLinks.itch && (
+                <a href={downloadLinks.itch}>{ItchLogo()}</a>
               )}
-              {downloadLinks.googlePlay && (
-                <>
-                  {", "}
-                  <a href={downloadLinks.googlePlay}>Google Play</a>
-                </>
+              {downloadLinks.github && (
+                <a href={downloadLinks.github}>{GitHubLogo()}</a>
               )}
-            </p>
+            </div>
           )}
         </div>
       </div>

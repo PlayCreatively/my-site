@@ -43,6 +43,13 @@ function PromiseHandler({ promise, children }) {
 // register Swiper custom elements
 swiperRegister();
 
+// const ProjectTitleToID = (title) => {
+//   return title
+//     .substring(0, title.indexOf(" ("))
+//     .replaceAll(" ", "-")
+//     .toLowerCase();
+// };
+
 function HomePage() {
   return (
     <div className="App Scroll-bar">
@@ -73,10 +80,8 @@ function HomePage() {
         <ReactSwiper>
           {ProjectsData.map((project) => (
             <swiper-slide
-              data-hash={project.title
-                .substring(0, project.title.indexOf(" ("))
-                .replaceAll(" ", "-")
-                .toLowerCase()}
+              // data-hash={ProjectTitleCleanUp(project.title)}
+              // id={ProjectTitleCleanUp(project.title)}
               key={project.title}
             >
               <Project {...project} />
@@ -89,12 +94,13 @@ function HomePage() {
           space-between="30"
           centered-slides={true}
           slides-per-view="1"
+          loop={true}
         >
           <PromiseHandler promise={GetImages}>
             {(images) =>
               images.map((image, i) => (
                 <swiper-slide
-                  data-hash={"img-" + i}
+                  // data-hash={"img-" + i}
                   key={"img-" + i}
                   style={{
                     alignSelf: "center",
