@@ -10,10 +10,8 @@ interface ProjectProps {
   description: string;
   contributions: string[] | [{ title: string; description: string }];
   downloadLinks?: {
-    itch: string;
     github: string;
-    appStore: string;
-    googlePlay: string;
+    itch: string;
   };
 }
 
@@ -92,11 +90,11 @@ const Project: React.FC<ProjectProps> = ({
           </ul>
           {downloadLinks && (
             <div className="download">
-              {downloadLinks.itch && (
-                <a href={downloadLinks.itch}>{ItchLogo()}</a>
-              )}
               {downloadLinks.github && (
                 <a href={downloadLinks.github}>{GitHubLogo()}</a>
+              )}
+              {downloadLinks.itch && (
+                <a href={downloadLinks.itch}>{ItchLogo()}</a>
               )}
             </div>
           )}
