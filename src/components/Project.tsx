@@ -25,9 +25,15 @@ const Project: React.FC<ProjectProps> = ({
   downloadLinks,
 }) => {
   const visualElement = video ? (
-    <video loop muted autoPlay src={video} className="game-image" />
+    <video
+      loop
+      muted
+      autoPlay
+      src={video}
+      className="image-section game-image"
+    />
   ) : (
-    <img src={image} className="game-image" />
+    <img src={image} className="image-section game-image" />
   );
 
   const [expandedIndex, setExpandedIndex] = React.useState<number>(-1);
@@ -38,7 +44,7 @@ const Project: React.FC<ProjectProps> = ({
   return (
     <div className="project-container">
       <div>
-        <div className="image-section">{visualElement}</div>
+        {visualElement}
         <div className="text-section">
           <h2>{title}</h2>
           <div className="tags">

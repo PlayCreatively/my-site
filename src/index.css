@@ -74,10 +74,8 @@ body {
 
 .Name-header {
   color: #ff8569;
-  font-size: xxx-large;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  font-size: min(3rem, 12vw);
+  cursor: default;
   font-family: "Fredoka";
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -115,7 +113,7 @@ body {
   display: flex;
   -moz-column-gap: 0.75em;
        column-gap: 0.75em;
-  margin-top: 0.2em;
+  margin-top: 0.4em;
 }
 @media (prefers-reduced-motion: no-preference) {
   *:has(> a svg) {
@@ -123,7 +121,7 @@ body {
   }
 }
 *:has(> a svg) svg {
-  height: max(0.9em, 35px);
+  height: max(0.9em, 30px);
   fill: #f7f0da;
   float: left;
   transition: 0.3s;
@@ -457,13 +455,20 @@ nav a:hover {
 }
 .project-container .game-image {
   width: 100%;
-  height: auto;
+  height: -moz-min-content;
+  height: min-content;
   box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
   border-radius: 0.3rem;
 }
 .project-container .text-section {
   flex: 1;
   text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-container .text-section > * {
+  margin: 0 !important;
 }
 .project-container ::first-letter {
   text-transform: capitalize;
@@ -474,9 +479,6 @@ nav a:hover {
 }
 .project-container p {
   font-size: unset;
-}
-.project-container .tags {
-  margin: 10px 0;
 }
 .project-container .tag {
   display: inline-block;
@@ -491,37 +493,41 @@ nav a:hover {
 .project-container ul {
   list-style-type: none;
   padding-inline: 0;
+  display: grid;
+  gap: 5px;
 }
-.project-container ul li {
+.project-container ul > p {
+  margin: 5px 0;
+}
+.project-container ul > li {
   background-color: rgba(0, 0, 0, 0.1411764706);
   padding: 0.3em;
   border-radius: 0.2em;
 }
-.project-container ul li:not(:last-child, .expanded) {
-  margin-bottom: 5px;
+.project-container ul > li.expanded {
+  background-color: rgba(0, 0, 0, 0.1529411765);
 }
-.project-container ul li > span::before {
+.project-container ul > li.expandable {
+  cursor: pointer;
+}
+.project-container ul > li.expandable:not(.expanded) > svg {
+  rotate: 180deg;
+}
+.project-container ul > li > span::before {
   content: "•";
   padding-right: 0.5em;
 }
-.project-container ul li.expandable {
-  cursor: pointer;
-}
-.project-container ul li.expandable:not(.expanded) > svg {
-  rotate: 180deg;
-}
-.project-container ul li > svg {
+.project-container ul > li > svg {
   width: auto;
   height: 1em;
   stroke: #ff8569;
   float: right;
   margin: 1px;
 }
-.project-container ul li > svg > path {
+.project-container ul > li > svg > path {
   fill: #ff8569;
 }
 .project-container .download {
-  margin-top: 20px;
   font-style: italic;
   font-size: 0.95em;
   gap: 1.25em;
@@ -541,7 +547,7 @@ nav a:hover {
 
 @media only screen and (max-width: 50rem) {
   .image-section {
-    padding-bottom: 2vw;
+    margin-bottom: 2vw;
   }
   .project-container > * {
     flex-direction: column;
@@ -551,10 +557,10 @@ nav a:hover {
 }
 @media only screen and (min-width: 50rem) {
   .image-section {
-    padding-right: 2vw;
+    margin-right: 2vw;
   }
   .project-container > * {
     flex-direction: row;
-    padding: 4vw;
+    padding: 5vh 4vw;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -82,8 +82,8 @@ body {
 
 .Name-header {
   color: $main-color;
-  font-size: xxx-large;
-  user-select: none;
+  font-size: min(3rem, 12vw);
+  cursor: default;
   font-family: "Fredoka";
   @media (prefers-reduced-motion: no-preference) {
     animation: Fade-in 1.2s;

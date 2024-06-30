@@ -12,7 +12,7 @@
 
   .game-image {
     width: 100%;
-    height: auto;
+    height: min-content;
     box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
     border-radius: 0.3rem;
   }
@@ -20,6 +20,13 @@
   .text-section {
     flex: 1;
     text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    > * {
+      margin: 0 !important;
+    }
   }
 
   ::first-letter {
@@ -33,10 +40,6 @@
 
   p {
     font-size: unset;
-  }
-
-  .tags {
-    margin: 10px 0;
   }
 
   .tag {
@@ -53,59 +56,61 @@
   ul {
     list-style-type: none;
     padding-inline: 0;
+    display: grid;
+    gap: 5px;
 
-    li {
+    > p {
+      margin: 5px 0;
+    }
+
+    > li {
       background-color: #00000024;
       padding: 0.3em;
       border-radius: 0.2em;
-    }
 
-    li:not(:last-child, .expanded) {
-      margin-bottom: 5px;
-    }
-
-    li > span::before {
-      content: "•";
-      padding-right: 0.5em;
-    }
-
-    li.expandable {
-      cursor: pointer;
-      // &:hover {
-      //   background-color: #00000027 !important;
-      // }
-    }
-
-    li.expandable:not(.expanded) > svg {
-      rotate: 180deg;
-    }
-
-    li > svg {
-      > path {
-        fill: $main-color;
+      &.expanded {
+        background-color: #00000027;
       }
-      width: auto;
-      height: 1em;
-      stroke: $main-color;
-      float: right;
-      margin: 1px;
+
+      &.expandable {
+        cursor: pointer;
+
+        &:not(.expanded) > svg {
+          rotate: 180deg;
+        }
+      }
+
+      > span::before {
+        content: "•";
+        padding-right: 0.5em;
+      }
+
+      > svg {
+        > path {
+          fill: $main-color;
+        }
+        width: auto;
+        height: 1em;
+        stroke: $main-color;
+        float: right;
+        margin: 1px;
+      }
     }
   }
 
   .download {
-    margin-top: 20px;
     font-style: italic;
     font-size: 0.95em;
     gap: 1.25em;
-  }
 
-  .download a {
-    color: #337ab7;
-    text-decoration: none;
-  }
+    & a {
+      color: #337ab7;
+      text-decoration: none;
 
-  .download a:hover {
-    text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -116,7 +121,7 @@
 
 @media only screen and (max-width: 50rem) {
   .image-section {
-    padding-bottom: 2vw;
+    margin-bottom: 2vw;
   }
   .project-container > * {
     flex-direction: column;
@@ -127,10 +132,10 @@
 
 @media only screen and (min-width: 50rem) {
   .image-section {
-    padding-right: 2vw;
+    margin-right: 2vw;
   }
   .project-container > * {
     flex-direction: row;
-    padding: 4vw;
+    padding: 5vh 4vw;
   }
 }
