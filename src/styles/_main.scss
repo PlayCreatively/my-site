@@ -20,20 +20,21 @@
 	font-family: 'Supermercado One', cursive;
 */
 
-$dark-background: #2a2725;
+$dark-background: #221d1a;
 $background-light-1: color-mix(in srgb, $dark-background 93%, white);
 $main-color: #ff8569;
 $secondary-color: #f7f0da;
-$white: #d3d3d3;
+$highlight-color: color-mix(in srgb, $main-color 45%, white);
+$white: #d3d3d3; // not in use (too gray)
 
 p {
-  color: $white;
+  color: $secondary-color;
   font-size: 2.5vh;
 }
 
 :root {
   font-family: "Roboto Slab";
-  color: $white;
+  color: $secondary-color;
   --main-color: #ff8569;
 }
 
@@ -51,7 +52,7 @@ body {
 
 .App > :not(nav, .Chapter) {
   min-height: 100vh;
-  align-items: center;
+  margin: auto;
 }
 
 .List-style {
@@ -80,13 +81,86 @@ body {
   font-size: 1.2em;
 }
 
-.Name-header {
-  color: $main-color;
-  font-size: min(3rem, 12vw);
-  cursor: default;
-  font-family: "Fredoka";
-  @media (prefers-reduced-motion: no-preference) {
-    animation: Fade-in 1.2s;
+.header-container {
+  display: grid;
+  justify-items: center;
+  gap: 5vw;
+  width: 100%;
+
+  @media screen and (min-width: 1100px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.header-intro-container {
+  display: grid;
+  gap: 1vw;
+  width: fit-content;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  font-size: 3.5vw;
+  @media screen and (max-width: 1100px) {
+    font-size: 6vw;
+  }
+
+  > .name-header {
+    background: -webkit-linear-gradient(#ff947c, #ff7251);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $main-color;
+    width: fit-content;
+    font-size: 1em;
+    cursor: default;
+    font-family: "Fredoka";
+    @media (prefers-reduced-motion: no-preference) {
+      animation: Fade-in 1.2s;
+    }
+  }
+
+  > .below-header-name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    #links {
+      gap: 0.6em;
+
+      a {
+        margin-top: 4px;
+      }
+
+      svg {
+        height: 0.75em;
+      }
+    }
+
+    > .header-description {
+      font-family: "Fredoka";
+      font-size: 0.5em;
+      color: $secondary-color;
+      text-align: right;
+      width: 16em;
+      @media (prefers-reduced-motion: no-preference) {
+        animation: Fade-in 1.2s;
+      }
+    }
+  }
+}
+
+a {
+  color: rgb(255 95 91);
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: white;
   }
 }
 

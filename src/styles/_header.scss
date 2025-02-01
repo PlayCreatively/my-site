@@ -8,7 +8,7 @@
   }
 
   svg {
-    height: max(0.9em, 30px);
+    height: 30px;
     fill: $secondary-color;
     float: left;
     transition: 0.3s;
@@ -30,7 +30,7 @@
   // animation: wobble 6s infinite alternate ease-in-out,
   //   blur-in 6s both cubic-bezier(0.18, 0.1, 0.2, 1);
   image-rendering: -webkit-optimize-contrast;
-  max-width: min(90vw, 400px);
+  max-width: min(100%, 400px);
   user-select: none;
   -webkit-user-drag: none;
   border-radius: 100%;
@@ -91,7 +91,7 @@
 
 @keyframes Slide-in {
   from {
-    column-gap: 0.2em;
+    column-gap: 0.2rem;
     // transform: translateX(1em);
   }
 }

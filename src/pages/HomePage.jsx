@@ -54,29 +54,39 @@ function HomePage() {
   return (
     <div className="App Scroll-bar">
       <header className="App-header default-width">
-        <div>
-          <img className="avatar" src="me.jpg" />
-          <h1 className="Name-header">
-            Alexander Freyr Þorgeirsson
-            <div id="links">
-              <a href={links.github}>
-                <GitHubLogo />
-              </a>
-              {/* <a href={links.twitter}>
+        <div className="header-container">
+          <img className="avatar" src="me.webp" />
+          <div className="header-intro-container">
+            <h1 className="name-header">Alexander Freyr Þorgeirsson</h1>
+            <div className="below-header-name">
+              <div id="links">
+                <a href={links.github}>
+                  <GitHubLogo />
+                </a>
+                {/* <a href={links.twitter}>
                 <TwitterLogo />
               </a>
               <a href={links.youtube}>
                 <YoutubeLogo />
               </a> */}
-              <a href={links.itch}>
-                <ItchLogo />
-              </a>
+                <a href={links.itch} target="_blank" rel="noopener noreferrer">
+                  <ItchLogo />
+                </a>
+              </div>
+              <p className="header-description">
+                <a className="header-description-highlight">Programmer</a>
+                {", hobby "}
+                <a href="#drawings" className="header-description-highlight">
+                  artist
+                </a>
+                {", idealist and interested in games as a teaching tool."}
+              </p>
             </div>
-          </h1>
+          </div>
         </div>
       </header>
       {/* <Canvas id="bg" draw={draw} /> */}
-      <div className="default-width" style={{ maxWidth: "calc(96vw - 30px)" }}>
+      <div>
         <ReactSwiper>
           {ProjectsData.map((project) => (
             <swiper-slide
@@ -95,6 +105,7 @@ function HomePage() {
           centered-slides={true}
           slides-per-view="1"
           loop={true}
+          // hash-navigation-watch-state="true"
         >
           <PromiseHandler promise={GetImages}>
             {(images) =>

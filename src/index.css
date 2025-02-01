@@ -21,18 +21,18 @@
 	font-family: 'Supermercado One', cursive;
 */
 p {
-  color: #d3d3d3;
+  color: #f7f0da;
   font-size: 2.5vh;
 }
 
 :root {
   font-family: "Roboto Slab";
-  color: #d3d3d3;
+  color: #f7f0da;
   --main-color: #ff8569;
 }
 
 body {
-  background-color: #2a2725;
+  background-color: #221d1a;
   margin: 0;
   overflow-x: hidden;
 }
@@ -45,7 +45,7 @@ body {
 
 .App > :not(nav, .Chapter) {
   min-height: 100vh;
-  align-items: center;
+  margin: auto;
 }
 
 .List-style {
@@ -72,16 +72,88 @@ body {
   font-size: 1.2em;
 }
 
-.Name-header {
+.header-container {
+  display: grid;
+  justify-items: center;
+  gap: 5vw;
+  width: 100%;
+}
+@media screen and (min-width: 1100px) {
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.header-intro-container {
+  display: grid;
+  gap: 1vw;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 3.5vw;
+}
+.header-intro-container * {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1100px) {
+  .header-intro-container {
+    font-size: 6vw;
+  }
+}
+.header-intro-container > .name-header {
+  background: -webkit-linear-gradient(#ff947c, #ff7251);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: #ff8569;
-  font-size: min(3rem, 12vw);
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1em;
   cursor: default;
   font-family: "Fredoka";
 }
 @media (prefers-reduced-motion: no-preference) {
-  .Name-header {
+  .header-intro-container > .name-header {
     animation: Fade-in 1.2s;
   }
+}
+.header-intro-container > .below-header-name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header-intro-container > .below-header-name #links {
+  gap: 0.6em;
+}
+.header-intro-container > .below-header-name #links a {
+  margin-top: 4px;
+}
+.header-intro-container > .below-header-name #links svg {
+  height: 0.75em;
+}
+.header-intro-container > .below-header-name > .header-description {
+  font-family: "Fredoka";
+  font-size: 0.5em;
+  color: #f7f0da;
+  text-align: right;
+  width: 16em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .header-intro-container > .below-header-name > .header-description {
+    animation: Fade-in 1.2s;
+  }
+}
+
+a {
+  color: rgb(255, 95, 91);
+  cursor: pointer;
+  text-decoration: underline;
+}
+a:hover {
+  color: white;
 }
 
 .App {
@@ -121,7 +193,7 @@ body {
   }
 }
 *:has(> a svg) svg {
-  height: max(0.9em, 30px);
+  height: 30px;
   fill: #f7f0da;
   float: left;
   transition: 0.3s;
@@ -138,7 +210,7 @@ body {
 
 .avatar {
   image-rendering: -webkit-optimize-contrast;
-  max-width: min(90vw, 400px);
+  max-width: min(100%, 400px);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -191,8 +263,8 @@ body {
 }
 @keyframes Slide-in {
   from {
-    -moz-column-gap: 0.2em;
-         column-gap: 0.2em;
+    -moz-column-gap: 0.2rem;
+         column-gap: 0.2rem;
   }
 }
 @keyframes Fade-in {
@@ -353,7 +425,7 @@ body {
 }
 
 nav {
-  background-color: color-mix(in srgb, #2a2725 93%, white);
+  background-color: color-mix(in srgb, #221d1a 93%, white);
   display: flex;
   position: fixed;
   width: 100%;
@@ -368,7 +440,7 @@ nav a {
   font-family: sans-serif;
 }
 nav a:hover {
-  background-color: color-mix(in srgb, color-mix(in srgb, #2a2725 93%, white) 85%, black);
+  background-color: color-mix(in srgb, color-mix(in srgb, #221d1a 93%, white) 85%, black);
 }
 
 .ScrollText {
@@ -444,23 +516,27 @@ nav a:hover {
 }
 
 .project-container {
-  display: flex;
+  display: grid;
   margin: auto;
   font-family: Arial, sans-serif;
   color: #ff8569;
   cursor: default;
 }
-.project-container .image-section {
-  flex: 2;
-}
 .project-container .game-image {
+  max-width: 100%;
   width: 100%;
-  height: -moz-min-content;
-  height: min-content;
   box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
   border-radius: 0.3rem;
+  anchor-name: --anchor-el;
 }
 .project-container .text-section {
+  flex: 1;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-container .text-section > .text {
   flex: 1;
   text-align: start;
   display: flex;
@@ -479,6 +555,7 @@ nav a:hover {
 }
 .project-container p {
   font-size: unset;
+  margin: 0;
 }
 .project-container .tag {
   display: inline-block;
@@ -531,36 +608,74 @@ nav a:hover {
   font-style: italic;
   font-size: 0.95em;
   gap: 1.25em;
+  position: absolute;
+  position-anchor: --anchor-el;
+  bottom: anchor(96%);
+  right: anchor(97%);
+  z-index: 1000;
 }
 .project-container .download a {
   color: #337ab7;
-  text-decoration: none;
 }
-.project-container .download a:hover {
-  text-decoration: underline;
+.project-container .download svg {
+  filter: drop-shadow(0px 0px 4px black);
 }
-
+.project-container .sub-sections-menu {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  gap: 0;
+}
+.project-container .sub-sections-menu svg {
+  height: 1.2em;
+  fill: #ff8569;
+}
+.project-container .sub-sections-menu .active {
+  color: gray;
+  fill: gray;
+}
+.project-container .sub-sections-menu > * {
+  padding: 0.3em 1em;
+}
+.project-container .sub-sections-menu > *:not(:first-child) {
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+.project-container .sub-sections-menu > *:hover:not(.active) {
+  cursor: pointer;
+  color: color-mix(in srgb, #ff8569 45%, white);
+  fill: color-mix(in srgb, #ff8569 45%, white);
+}
 .project-container > * {
   display: flex;
   flex-direction: column;
 }
+.project-container > * > * {
+  gap: 2vw;
+}
 
-@media only screen and (max-width: 50rem) {
-  .image-section {
-    margin-bottom: 2vw;
+@media only screen and (max-width: 1000px) {
+  div:has(> swiper-container) {
+    max-width: 96vw;
   }
   .project-container > * {
-    flex-direction: column;
     padding: 5px;
     padding-bottom: 4vh;
   }
+  .project-container > * > * {
+    display: flex;
+    flex-direction: column;
+  }
 }
-@media only screen and (min-width: 50rem) {
-  .image-section {
-    margin-right: 2vw;
+@media only screen and (min-width: 1000px) {
+  div:has(> swiper-container) {
+    max-width: calc(-30px + 96vw);
   }
   .project-container > * {
-    flex-direction: row;
     padding: 5vh 4vw;
+  }
+  .project-container > * > * {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
   }
 }/*# sourceMappingURL=index.css.map */

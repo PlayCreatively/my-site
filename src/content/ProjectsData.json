@@ -1,14 +1,23 @@
 [
 	{
 		"title": "SPLISH-SPLASH SUBMARINE (2024)",
-		"description": "For this university project, I served as the lead programmer and leveraged my 7 years of prior Unity experience. I focused on creating efficient tooling and a project structure that facilitated fast and frictionless iteration for the entire team.",
+		"description": "As lead programmer for this university project, I leveraged 7 years of Unity experience to create a centralized workflow using Scriptable Objects. This approach allowed for easy tweaking of game settings, experimentation with different SO configurations, and iterative testing for rapid development and refinement.",
 		"video": "splish-splash-submarine trailer.mp4",
 		"image": "https://img.itch.zone/aW1hZ2UvMjUxNDU3Ni8xNTMzMzk2OC5wbmc=/original/0xrdez.png",
-		"contributions": [
+		"backup-subsection": {
+			"title": "Project Structure",
+			"description": "Designing games requires a lot of value tweaking, sometimes to the point of feeling like alchemy, mapping out all the potential mixtures of different values and how they interact with each other. So to be able to try these mixture of value and store them for later review is a must. This led me to go all in with Unity's Scriptable Objects, so all the game design related values were nested in a single file, making it easy to swap out different submodules for different overall experience and stored on multiple files for later playtesting.\n### Retrospective\nNesting Scriptable Objects turned out to be more problematic than I anticipated and the reasons were manifold. Since I wanted the ability to combine different modules it meant that each module would represent different portions of the game (Player, Shooting, Enemy, EnemyFromBehind) it both made it difficult to decide what should be a destinct module and what should be a part of another module (see Player and Shooting), I wanted each module variate to have a memorable and descriptive name such as \"SprayNPray\" for a Shooting variant that shot at a very high frequency, but when you'd make a game mode variant that mixed all of these modules together it would be normal to slightly tweak some of the values so everything would fit well together, but ooops, another game mode was using one of the modules you just tweaked. Having a single file to access all of the values was however a great boon, since variables were no longer spread over different GameObjects and Components and it allowed for making a few game modes that was easy to go between during playtesting."
+		},
+		"subSections": [
 			{
 				"title": "Tooling",
-				"description": "Created a custom tool for the level designer to easily create and edit levels."
-			},
+				"image": "UploadAutomation.png",
+				"description": "I created a [Unity tool](https://github.com/PlayCreatively/Splish-Splash-Submarine/blob/main/Assets/Scripts/Editor/Builder.cs) that automated the WebGL build and upload process to itch.io, allowing non-technical team members to deploy builds easily. This reduced friction, enabled continuous playtesting, and allowed for fast hotfixes during testing sessions."
+			}
+		],
+		"contributions": [
+			"Project Structure",
+			"Unity Tooling",
 			"Implemented all major systems"
 		],
 		"tags": [
@@ -23,12 +32,16 @@
 	},
 	{
 		"title": "Alzheimer's (2023)",
-		"description": "...",
-		"image": "https://img.itch.zone/aW1nLzE0MjI2NDE0LnBuZw==/315x250%23c/TVRzm9.png",
+		"description": "As the sole developer of this experimental microgame, I designed an interactive experience exploring memory loss through gameplay constraints—30 seconds, no dialogue, and a continuous narrative. Inspired by Mario Party’s face-reassembling minigame, I rafted a scene where an old man, suffering from amnesia, struggles to reconstruct his daughter’s face from memory.\n\nI implemented a dynamic system where facial features detach and float, with time (represented by calendar pages) actively distorting the player's efforts. The game escalates as more pages rip away, interfering with the reconstruction process until the player is inevitably overwhelmed—reinforcing the theme of memory decay.\n\nThough I had to cut features due to time constraints, I envisioned deeper symbolism, such as an origami bat draining colors from the daughter’s face and errors in reconstruction reflecting back onto the old man, questioning the link between memory and identity.",
+		"image": "alzheimer's footage.png",
 		"contributions": [],
 		"tags": [
-			"Programming",
+			"Solo Project",
+			"C#",
+			"Unity",
+			"Art",
 			"Game Design"
+			
 		],
 		"downloadLinks": {
 			"itch": "https://playcreatively.itch.io/alzheimers"

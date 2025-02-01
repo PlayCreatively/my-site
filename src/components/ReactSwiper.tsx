@@ -19,7 +19,7 @@ const ProjectsSwiper: React.FC<SwiperProps> = ({ children, ...props }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 800);
+      setIsMobile(window.innerWidth <= 1000);
     };
 
     window.addEventListener("resize", handleResize);
@@ -37,7 +37,6 @@ const ProjectsSwiper: React.FC<SwiperProps> = ({ children, ...props }) => {
       navigation={!isMobile}
       pagination="true"
       // scrollbar="true"
-      hash-navigation-watch-state="true"
       pagination-clickable="true"
       keyboard="true"
       centeredSlides="true"
