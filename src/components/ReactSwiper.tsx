@@ -35,11 +35,11 @@ const ProjectsSwiper: React.FC<SwiperProps> = ({ children, ...props }) => {
       ref={swiperRef}
       speed="500"
       navigation={!isMobile}
-      pagination="true"
-      // scrollbar="true"
-      pagination-clickable="true"
-      keyboard="true"
-      centeredSlides="true"
+      pagination={true}
+      // scrollbar={true}
+      pagination-clickable={true}
+      keyboard={true}
+      centeredSlides={true}
       slides-per-view="auto"
       {...props}
       style={{
