@@ -38,14 +38,23 @@ body {
 }
 
 .default-width {
-  max-width: calc(90vw - 30px);
+  max-width: 90vw;
   margin-right: auto;
   margin-left: auto;
 }
 
+.App {
+  scroll-snap-type: y mandatory;
+  overflow: clip auto;
+  height: 100vh;
+}
 .App > :not(nav, .Chapter) {
+  max-height: 100vh;
   min-height: 100vh;
   margin: auto;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .List-style {
@@ -99,7 +108,7 @@ body {
 }
 @media screen and (max-width: 1100px) {
   .header-intro-container {
-    font-size: 6vw;
+    font-size: min(7vw, 3rem);
   }
 }
 .header-intro-container > .name-header {
@@ -119,11 +128,25 @@ body {
     animation: Fade-in 1.2s;
   }
 }
+.header-intro-container > .name-header a:hover {
+  background: white;
+  -webkit-background-clip: text;
+          background-clip: text;
+  cursor: pointer;
+}
 .header-intro-container > .below-header-name {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  text-align: right;
+}
+@media screen and (max-width: 40rem) {
+  .header-intro-container > .below-header-name {
+    text-align: left;
+    flex-direction: column-reverse;
+    gap: 1vw;
+  }
 }
 .header-intro-container > .below-header-name #links {
   gap: 0.6em;
@@ -138,8 +161,11 @@ body {
   font-family: "Fredoka";
   font-size: 0.5em;
   color: #f7f0da;
-  text-align: right;
-  width: 16em;
+}
+@media screen and (min-width: 40rem) {
+  .header-intro-container > .below-header-name > .header-description {
+    width: 16em;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .header-intro-container > .below-header-name > .header-description {
@@ -159,6 +185,9 @@ a:hover {
 .App {
   text-align: center;
 }
+.App > * {
+  scroll-snap-align: center;
+}
 
 .App-header {
   display: flex;
@@ -167,7 +196,6 @@ a:hover {
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: #d3d3d3;
-  height: 90vh;
   margin: 0 2em;
 }
 
@@ -210,7 +238,7 @@ a:hover {
 
 .avatar {
   image-rendering: -webkit-optimize-contrast;
-  max-width: min(100%, 400px);
+  max-width: min(90%, 400px);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -288,15 +316,16 @@ a:hover {
     transform: rotateZ(300deg);
   }
 }
-::-webkit-scrollbar {
+.App::-webkit-scrollbar {
+  width: 0px;
+}
+
+.text::-webkit-scrollbar {
   width: 6px;
 }
-::-webkit-scrollbar-thumb {
+.text::-webkit-scrollbar-thumb {
   /* Handle */
   border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  /* Handle on hover */
   background: rgb(110, 110, 110);
 }
 
@@ -363,6 +392,13 @@ a:hover {
   font-weight: bold;
   font-size: 2rem;
   padding: 0 1rem;
+}
+.ImageGallery .swiper img {
+  max-width: 100%;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.3vw;
 }
 
 .Chapter {
@@ -515,33 +551,51 @@ nav a:hover {
   cursor: default;
 }
 
+swiper-container {
+  height: 100%;
+}
+
 .project-container {
-  display: grid;
+  max-height: 100%;
+  display: flex;
   margin: auto;
   font-family: Arial, sans-serif;
   color: #ff8569;
   cursor: default;
 }
 .project-container .game-image {
-  max-width: 100%;
-  width: 100%;
   box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
   border-radius: 0.3rem;
   anchor-name: --anchor-el;
 }
+@media only screen and (max-width: 1000px) {
+  .project-container .game-image {
+    max-height: 47vh;
+    margin: 0 auto;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .project-container .game-image {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .project-container .text-section {
-  flex: 1;
   text-align: start;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-y: hidden;
 }
 .project-container .text-section > .text {
-  flex: 1;
   text-align: start;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-y: auto;
 }
 .project-container .text-section > * {
   margin: 0 !important;
@@ -557,14 +611,24 @@ nav a:hover {
   font-size: unset;
   margin: 0;
 }
+.project-container .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.project-container .tags .divider {
+  border: rgba(255, 255, 255, 0.1) solid 1px;
+  margin: 0px 0.2em;
+}
+.project-container .tags .role-tag {
+  background: rgb(113, 139, 189);
+}
 .project-container .tag {
   display: inline-block;
   background-color: #d9534f;
   color: white;
   text-transform: capitalize;
   padding: 4px 8px;
-  margin: 4px 0;
-  margin-right: 10px;
   border-radius: 5px;
 }
 .project-container ul {
@@ -646,10 +710,6 @@ nav a:hover {
   color: color-mix(in srgb, #ff8569 45%, white);
   fill: color-mix(in srgb, #ff8569 45%, white);
 }
-.project-container > * {
-  display: flex;
-  flex-direction: column;
-}
 .project-container > * > * {
   gap: 2vw;
 }
@@ -665,6 +725,7 @@ nav a:hover {
   .project-container > * > * {
     display: flex;
     flex-direction: column;
+    max-height: 100%;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -676,6 +737,16 @@ nav a:hover {
   }
   .project-container > * > * {
     display: grid;
+    max-height: 31.5vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (min-width: 1000px) {
+  .project-container > * > * {
     grid-template-columns: 2fr 1fr;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1000px) {
+  .project-container > * > * {
+    grid-template-rows: 2fr 1fr;
   }
 }/*# sourceMappingURL=index.css.map */

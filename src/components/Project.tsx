@@ -2,14 +2,17 @@ import React from "react";
 import { DownArrow } from "../content/down-arrow.jsx";
 import { ItchLogo, GitHubLogo, HomeLogo } from "../content/SVGlogos.jsx";
 import { marked } from "marked";
+import PDF from "./reactComponents/PDF";
 
 interface ProjectProps {
   video?: string;
   image?: string;
   title: string;
+  roles: string[];
   tags: string[];
   description: string;
   subSections?: [{ title: string; image: string; description: string }];
+  pdf?: string;
   contributions: string[] | [{ title: string; description: string }];
   downloadLinks?: {
     github: string;
@@ -24,6 +27,8 @@ const Project: React.FC<ProjectProps> = ({
   tags,
   description,
   subSections,
+  pdf,
+  roles,
   contributions,
   downloadLinks,
 }) => {
@@ -39,7 +44,9 @@ const Project: React.FC<ProjectProps> = ({
     ) : (
       <img src={subSections?.[expandedIndex]?.image} className="game-image" />
     );
-  const GetContent = (id: number) => {
+  const GetSubsectionContent = (id: number) => {
+    if (id === subSections?.length && pdf) return <PDF url={pdf} />;
+
     const subSection = subSections?.[id];
 
     const content = {
@@ -49,65 +56,33 @@ const Project: React.FC<ProjectProps> = ({
 
     return (
       <>
-        <h2>{content.title}</h2>
-        {id === -1 ? (
-          <div className="tags">
-            {tags.map((tag, index) => (
-              <span key={index} className="tag">
-                {tag}
-              </span>
-            ))}
-          </div>
-        ) : (
-          <></>
-        )}
-        <div
-          className="text"
-          dangerouslySetInnerHTML={{
-            __html: marked.parse(content.description, { breaks: true }),
-          }}
-        />
-      </>
-    );
-  };
-
-  const handleExpand = (index: number) =>
-    setExpandedIndex(expandedIndex === index ? -1 : index);
-
-  const mapContributions = (
-    subSections: [{ title: string; description: string }]
-  ) =>
-    subSections.map((subSection, index: number) => (
-      <div
-        key={index}
-        className={index === expandedIndex ? "active" : ""}
-        onClick={() => handleExpand(index)}
-      >
-        {subSection.title}
-      </div>
-    ));
-
-  return (
-    <div className="project-container">
-      <div>
-        <div className="sub-sections-menu">
-          {subSections !== undefined ? (
-            <>
-              {HomeLogo({
-                className: expandedIndex == -1 ? "active" : undefined,
-                onClick: () => handleExpand(-1),
-              })}
-              {mapContributions(subSections)}
-            </>
+        {visualElement}
+        <div className="text-section">
+          <h2>{content.title}</h2>
+          {id === -1 ? (
+            <div className="tags">
+              {roles.map((role, index) => (
+                <span key={index + 1} className="tag role-tag">
+                  {role}
+                </span>
+              ))}
+              <span className="divider"></span>
+              {tags.map((tag, index) => (
+                <span key={index + 1} className="tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
           ) : (
             <></>
           )}
-        </div>
-        <div>
-          {visualElement}
-          <div className="text-section">
-            {GetContent(expandedIndex)}
-            {/* <ul>
+          <div
+            className="text"
+            dangerouslySetInnerHTML={{
+              __html: marked.parse(content.description, { breaks: true }),
+            }}
+          />
+          {/* <ul>
               {contributions.map(
                 (
                   contribution: string | { title: string; description: string },
@@ -148,18 +123,62 @@ const Project: React.FC<ProjectProps> = ({
                 )
               )}
             </ul> */}
-            {downloadLinks && (
-              <div className="download">
-                {downloadLinks.github && (
-                  <a href={downloadLinks.github}>{GitHubLogo()}</a>
-                )}
-                {downloadLinks.itch && (
-                  <a href={downloadLinks.itch}>{ItchLogo()}</a>
-                )}
-              </div>
-            )}
-          </div>
+          {downloadLinks && (
+            <div className="download">
+              {downloadLinks.github && (
+                <a href={downloadLinks.github}>{GitHubLogo()}</a>
+              )}
+              {downloadLinks.itch && (
+                <a href={downloadLinks.itch}>{ItchLogo()}</a>
+              )}
+            </div>
+          )}
         </div>
+      </>
+    );
+  };
+
+  const handleExpand = (index: number) =>
+    setExpandedIndex(expandedIndex === index ? -1 : index);
+
+  const mapContributions = (
+    subSections: [{ title: string; description: string }]
+  ) =>
+    subSections.map((subSection, index: number) => (
+      <div
+        key={index}
+        className={index === expandedIndex ? "active" : ""}
+        onClick={() => handleExpand(index)}
+      >
+        {subSection.title}
+      </div>
+    ));
+
+  return (
+    <div className="project-container">
+      <div>
+        <div className="sub-sections-menu">
+          {subSections !== undefined ? (
+            <>
+              {HomeLogo({
+                key: -1,
+                className: expandedIndex == -1 ? "active" : undefined,
+                onClick: () => handleExpand(-1),
+              })}
+              {mapContributions(subSections)}
+
+              <span
+                className={expandedIndex == -1 ? "active" : undefined}
+                onClick={() => handleExpand(subSections.length)}
+              >
+                📁
+              </span>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div>{GetSubsectionContent(expandedIndex)}</div>
       </div>
     </div>
   );

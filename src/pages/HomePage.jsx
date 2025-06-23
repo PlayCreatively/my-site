@@ -15,6 +15,8 @@ import ProjectsData from "content/ProjectsData.json";
 import Project from "components/Project";
 import { register as swiperRegister } from "swiper/element/bundle";
 import React, { useState, useEffect } from "react";
+import PDF from "components/reactComponents/PDF";
+import { block } from "marked";
 
 const links = {
   github: "https://github.com/PlayCreatively",
@@ -57,7 +59,11 @@ function HomePage() {
         <div className="header-container">
           <img className="avatar" src="me.webp" />
           <div className="header-intro-container">
-            <h1 className="name-header">Alexander Freyr Þorgeirsson</h1>
+            <h1 className="name-header">
+              Alexander Freyr{" "}
+              <a href="https://en.wikipedia.org/wiki/Thorn_(letter)">Þ</a>
+              orgeirsson
+            </h1>
             <div className="below-header-name">
               <div id="links">
                 <a href={links.github}>
@@ -79,12 +85,15 @@ function HomePage() {
                 <a href="#drawings" className="header-description-highlight">
                   artist
                 </a>
-                {", idealist and interested in games as a teaching tool."}
+                {" and Life long creator, "}
+                {/* {"—passionate about games as sandboxes for learning."} */}
               </p>
             </div>
           </div>
         </div>
       </header>
+
+      {/* <PDF url="Work-logs/Visual-Work-Log.pdf" /> */}
       {/* <Canvas id="bg" draw={draw} /> */}
       <div>
         <ReactSwiper>
@@ -99,7 +108,7 @@ function HomePage() {
           ))}
         </ReactSwiper>
       </div>
-      <Chapter title="Drawings">
+      <div id="Drawings" style={{ display: "block" }}>
         <ReactSwiper
           space-between="30"
           centered-slides={true}
@@ -123,6 +132,7 @@ function HomePage() {
                     alt={`Drawing ${i}`}
                     style={{
                       maxHeight: "100vh",
+                      height: "100%",
                       objectFit: "cover",
                       borderRadius: "0.3vw",
                     }}
@@ -132,19 +142,8 @@ function HomePage() {
             }
           </PromiseHandler>
         </ReactSwiper>
-        <style>
-          {`
-          .swiper img {
-  max-width: 100%;
-  max-height: 100vh;
-  object-fit: cover;
-  border-radius: 0.3vw;
-}
-          }
-        `}
-        </style>
         {/* <ImageGallery urls={GetImages()} /> */}
-      </Chapter>
+      </div>
     </div>
   );
 }

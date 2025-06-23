@@ -5,6 +5,8 @@
 }
 
 .ImageGallery {
+
+
   $button-icon-overflow: 2rem;
   $buttonWidth: 45%;
   $button-icon-padding: 1rem;
@@ -70,5 +72,12 @@
     font-weight: bold;
     font-size: 2rem;
     padding: 0 $button-icon-padding;
+  }
+
+  .swiper img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+    border-radius: 0.3vw;
   }
 }

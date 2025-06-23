@@ -1,8 +1,13 @@
 // inspired by https://codepen.io/andrewerrico/pen/ExVQvZo
 // inspired by http://www.jayvanhutten.com/
 
+swiper-container {
+  height: 100%;
+}
+
 .project-container {
-  display: grid;
+  max-height: 100%;
+  display: flex;
 
   margin: auto;
   font-family: Arial, sans-serif;
@@ -11,26 +16,37 @@
   //   align-items: center;
 
   .game-image {
-    max-width: 100%;
-    width: 100%;
+    @media only screen and (max-width: 1000px) {
+      max-height: 47vh;
+      margin: 0 auto;
+      max-width: 100%;
+      width: fit-content;
+    }
+
+    @media only screen and (min-width: 1000px) {
+      max-width: 100%;
+      width: 100%;
+      // width: fit-content;
+    }
+
     box-shadow: 4px 4px 20px -6px rgba(0, 0, 0, 0.25);
     border-radius: 0.3rem;
     anchor-name: --anchor-el;
   }
 
   .text-section {
-    flex: 1;
     text-align: start;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: hidden;
 
     > .text {
-      flex: 1;
       text-align: start;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      overflow-y: auto;
     }
 
     > * {
@@ -52,14 +68,27 @@
     margin: 0;
   }
 
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    .divider {
+      border: rgba(255, 255, 255, 0.1) solid 1px;
+      margin: 0px 0.2em;
+    }
+
+    .role-tag {
+      background: rgb(113 139 189);
+    }
+  }
+
   .tag {
     display: inline-block;
     background-color: #d9534f;
     color: white;
     text-transform: capitalize;
     padding: 4px 8px;
-    margin: 4px 0;
-    margin-right: 10px;
     border-radius: 5px;
   }
 
@@ -159,8 +188,6 @@
   }
 
   > * {
-    display: flex;
-    flex-direction: column;
     > * {
       gap: 2vw;
     }
@@ -175,6 +202,7 @@
     > * {
       display: flex;
       flex-direction: column;
+      max-height: 100%;
     }
     padding: 5px;
     padding-bottom: 4vh;
@@ -188,7 +216,13 @@
   .project-container > * {
     > * {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      @media only screen and (min-width: 1000px) {
+        grid-template-columns: 2fr 1fr;
+      }
+      @media only screen and (max-width: 1000px) {
+        grid-template-rows: 2fr 1fr;
+      }
+      max-height: 31.5vw;
     }
     padding: 5vh 4vw;
   }
