@@ -2,7 +2,7 @@
 	{
 		"title": "Haunted Hotel Management (2025)",
 		"description": "As a relatively small team of 5, I took on the role of project owner and solo programmer for this game. As I often unofficially took the role of lead designer in my previous projects, I desided it was time to make it official and take on the role of project owner. This meant I was responsible for the overall vision of the game, every mechanic, system and feature. As the only programmer I was also responsible for the implementation of all these features, which meant I had to be very careful about the scope of the project and what features I could realistically implement in the 10 week span we were allocated.",
-		"video": "Hauntel_Management_Trailer.mp4",
+		"video": "Hauntel_Management_Trailer.av1",
 		"image": "https://img.itch.zone/aW1hZ2UvMjUxNDU3Ni8xNTMzMzk2OC5wbmc=/original/0xrdez.png",
 		"pdf": "Work-logs/Visual-Work-Log.pdf",
 		"contributions": [
@@ -27,7 +27,7 @@
 	{
 		"title": "SPLISH-SPLASH SUBMARINE (2024)",
 		"description": "As lead programmer for this university project, I leveraged 7 years of Unity experience to create a centralized workflow using Scriptable Objects. This approach allowed for easy tweaking of game settings, experimentation with different SO configurations, and iterative testing for rapid development and refinement.",
-		"video": "splish-splash-submarine trailer.mp4",
+		"video": "splish-splash-submarine-trailer.av1",
 		"image": "https://img.itch.zone/aW1hZ2UvMjUxNDU3Ni8xNTMzMzk2OC5wbmc=/original/0xrdez.png",
 		"backup-subsection": {
 			"title": "Project Structure",
