@@ -46,6 +46,7 @@ body {
 .App {
   scroll-snap-type: y mandatory;
   overflow: clip auto;
+  margin: auto;
   height: 100vh;
 }
 .App > :not(nav, .Chapter) {
@@ -553,6 +554,7 @@ nav a:hover {
 
 swiper-container {
   height: 100%;
+  max-width: -webkit-fill-available;
 }
 
 .project-container {

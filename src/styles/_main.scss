@@ -53,6 +53,7 @@ body {
 .App {
   scroll-snap-type: y mandatory;
   overflow: clip auto;
+  margin: auto;
 
   height: 100vh;
   > :not(nav, .Chapter) {

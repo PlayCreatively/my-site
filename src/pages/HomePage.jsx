@@ -108,7 +108,7 @@ function HomePage() {
           ))}
         </ReactSwiper>
       </div>
-      <div id="Drawings" style={{ display: "block" }}>
+      <div id="Drawings">
         <ReactSwiper
           space-between="30"
           centered-slides={true}
