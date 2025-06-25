@@ -1,57 +1,59 @@
-import React, { useState, useEffect, useRef } from "react";
-import Swiper from "swiper";
+import React, { useEffect, useRef, useState } from "react";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "swiper-container": any;
-      "swiper-slide": any;
-      // add other swiper elements here
-    }
-  }
-}
+// ➊ Core styles + any feature CSS you need
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-interface SwiperProps {
+// ➋ React wrapper & modules
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Keyboard } from "swiper/modules";
+
+// ➌ Runtime type for the ref
+import type { Swiper as SwiperInstance } from "swiper";
+
+interface ProjectsSwiperProps {
+  /** Pass <div>…</div> children and we wrap each in a slide */
   children?: React.ReactNode;
 }
 
-const ProjectsSwiper: React.FC<SwiperProps> = ({ children, ...props }) => {
+const ProjectsSwiper: React.FC<ProjectsSwiperProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
-  const swiperRef = useRef<Swiper | null>(null);
+  const swiperRef = useRef<SwiperInstance | null>(null);
 
+  /* ---------- track viewport width for nav arrows ---------- */
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1000);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 1000);
     window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [swiperRef]);
+    handleResize(); // run once on mount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <swiper-container
-      ref={swiperRef}
-      speed="500"
+    <Swiper
+      /* core settings --------------------------------------- */
+      modules={[Navigation, Pagination, Keyboard]}
+      onSwiper={(instance) => (swiperRef.current = instance)}
+      speed={500}
+      centeredSlides
+      slidesPerView="auto"
+      /* feature toggles ------------------------------------- */
       navigation={!isMobile}
-      pagination={true}
-      // scrollbar={true}
-      pagination-clickable={true}
-      keyboard={true}
-      centeredSlides={true}
-      slides-per-view="auto"
-      {...props}
-      style={{
-        "--swiper-theme-color": "var(--main-color)",
-        "--swiper-navigation-size": "30px",
-        "--swiper-navigation-sides-offset": 0,
-      }}
+      pagination={{ clickable: true }}
+      keyboard={{ enabled: true }}
+      /* CSS vars (need a cast because they’re custom props) -- */
+      style={
+        {
+          "--swiper-theme-color": "var(--main-color)",
+          "--swiper-navigation-size": "30px",
+          "--swiper-navigation-sides-offset": "0px",
+        } as React.CSSProperties
+      }
     >
-      {children}
-    </swiper-container>
+      {React.Children.map(children, (child, i) => (
+        <SwiperSlide key={i}>{child}</SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

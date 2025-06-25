@@ -7,15 +7,16 @@ import {
 } from "../content/SVGlogos";
 import Canvas from "../components/Canvas";
 import { draw } from "../scripts/DustParticles";
-import ImageGallery from "../components/ImageGallery";
+// import ImageGallery from "../components/ImageGallery";
 import GetImages from "../components/GetImages";
 import Chapter from "../components/reactComponents/Chapter";
-import ReactSwiper from "../components/ReactSwiper";
 import ProjectsData from "../content/ProjectsData.json";
 import Project from "../components/Project";
-import { register as swiperRegister } from "swiper/element/bundle";
 import React, { useState, useEffect } from "react";
-import PDF from "../components/reactComponents/PDF";
+// import PDF from "../components/reactComponents/PDF";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const links = {
   github: "https://github.com/PlayCreatively",
@@ -41,9 +42,6 @@ function PromiseHandler({ promise, children }) {
   return children(data ?? []);
 }
 
-// register Swiper custom elements
-swiperRegister();
-
 // const ProjectTitleToID = (title) => {
 //   return title
 //     .substring(0, title.indexOf(" ("))
@@ -65,7 +63,11 @@ function HomePage() {
             </h1>
             <div className="below-header-name">
               <div id="links">
-                <a href={links.github}>
+                <a
+                  href={links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <GitHubLogo />
                 </a>
                 {/* <a href={links.twitter}>
@@ -95,20 +97,20 @@ function HomePage() {
       {/* <PDF url="Work-logs/Visual-Work-Log.pdf" /> */}
       {/* <Canvas id="bg" draw={draw} /> */}
       <div>
-        <ReactSwiper>
+        <Swiper>
           {ProjectsData.map((project) => (
-            <swiper-slide
+            <SwiperSlide
               // data-hash={ProjectTitleCleanUp(project.title)}
               // id={ProjectTitleCleanUp(project.title)}
               key={project.title}
             >
               <Project {...project} />
-            </swiper-slide>
+            </SwiperSlide>
           ))}
-        </ReactSwiper>
+        </Swiper>
       </div>
       <div id="Drawings">
-        <ReactSwiper
+        <Swiper
           space-between="30"
           centered-slides={true}
           slides-per-view="1"
@@ -118,7 +120,7 @@ function HomePage() {
           <PromiseHandler promise={GetImages}>
             {(images) =>
               images.map((image, i) => (
-                <swiper-slide
+                <SwiperSlide
                   // data-hash={"img-" + i}
                   key={"img-" + i}
                   style={{
@@ -136,11 +138,11 @@ function HomePage() {
                       borderRadius: "0.3vw",
                     }}
                   />
-                </swiper-slide>
+                </SwiperSlide>
               ))
             }
           </PromiseHandler>
-        </ReactSwiper>
+        </Swiper>
         {/* <ImageGallery urls={GetImages()} /> */}
       </div>
     </div>
