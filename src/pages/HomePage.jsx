@@ -1,22 +1,21 @@
-import selfPortrait from "content/self portrait.png";
+import selfPortrait from "../content/self portrait.png";
 import {
   GitHubLogo,
   TwitterLogo,
   YoutubeLogo,
   ItchLogo,
 } from "../content/SVGlogos";
-import Canvas from "components/Canvas";
-import { draw } from "scripts/DustParticles";
-import ImageGallery from "components/ImageGallery";
-import GetImages from "components/GetImages";
-import Chapter from "components/reactComponents/Chapter";
-import ReactSwiper from "components/ReactSwiper";
-import ProjectsData from "content/ProjectsData.json";
-import Project from "components/Project";
+import Canvas from "../components/Canvas";
+import { draw } from "../scripts/DustParticles";
+import ImageGallery from "../components/ImageGallery";
+import GetImages from "../components/GetImages";
+import Chapter from "../components/reactComponents/Chapter";
+import ReactSwiper from "../components/ReactSwiper";
+import ProjectsData from "../content/ProjectsData.json";
+import Project from "../components/Project";
 import { register as swiperRegister } from "swiper/element/bundle";
 import React, { useState, useEffect } from "react";
-import PDF from "components/reactComponents/PDF";
-import { block } from "marked";
+import PDF from "../components/reactComponents/PDF";
 
 const links = {
   github: "https://github.com/PlayCreatively",

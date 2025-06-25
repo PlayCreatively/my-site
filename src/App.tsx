@@ -1,5 +1,5 @@
-import AboutMePage from "pages/AboutMePage";
-import HomePage from "pages/HomePage";
+import HomePage from "./pages/HomePage";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {

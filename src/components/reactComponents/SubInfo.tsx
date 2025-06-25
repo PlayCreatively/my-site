@@ -1,8 +1,10 @@
+import React from "react";
 import { CSSProperties, useState } from "react";
 
 interface ISubInfo {
-  subInfo: HTMLElement;
+  subInfo: React.ReactNode;
   hoverStyle?: React.CSSProperties;
+  children?: React.ReactNode;
 }
 
 const SubInfo: React.FC<ISubInfo> = ({ children, subInfo, hoverStyle }) => {

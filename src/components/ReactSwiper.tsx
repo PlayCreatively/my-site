@@ -11,7 +11,9 @@ declare global {
   }
 }
 
-interface SwiperProps {}
+interface SwiperProps {
+  children?: React.ReactNode;
+}
 
 const ProjectsSwiper: React.FC<SwiperProps> = ({ children, ...props }) => {
   const [isMobile, setIsMobile] = useState(false);

@@ -1,23 +1,37 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
-    "target": "es5",
+    "jsx": "react",
+    /* =====================
+       Universal settings
+    ====================== */
+    "target": "ES2020", // Vite compiles to ESM; ES5 is wasted bytes.
+    "module": "ESNext", // lets Vite/Rollup code-split cleanly
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": ["node", "lodash"],
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noImplicitAny": false,
+    "noImplicitAny": false, // you had this explicitly
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+
+    /* ============
+       Path aliases
+    ============= */
+    "baseUrl": ".",
+
+    "paths": {
+      "@/*": ["src/*"] // enables `import Foo from "@/lib/foo"`
+    },
+
+    /* ============
+       Other flags
+    ============= */
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
-  },
-  "include": ["src"]
+    "noEmit": true // overridden in the Node config when we DO emit
+  }
 }

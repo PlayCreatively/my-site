@@ -1,7 +1,9 @@
-const LineSegment: React.FC<{ className?: string }> = ({
-  className,
-  children,
-}) => {
+import React from "react";
+
+const LineSegment: React.FC<{
+  className?: string;
+  children?: React.ReactNode;
+}> = ({ className, children }) => {
   return (
     <div
       className={

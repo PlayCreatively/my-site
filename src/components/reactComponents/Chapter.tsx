@@ -1,7 +1,10 @@
+import React from "react";
+
 interface IChapter {
   title: string;
   className?: string;
   boarder?: boolean;
+  children?: React.ReactNode;
 }
 
 const Chapter: React.FC<IChapter> = ({

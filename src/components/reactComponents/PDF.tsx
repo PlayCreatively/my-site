@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
+import React from "react";
+import { pdfjs } from 'react-pdf';
 
-// Configure the worker to use the local file
-GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.mjs`;
+// This produces an absolute URL that Vite knows how to bundle
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',   // ←  .mjs, no “?url”
+  import.meta.url,
+).toString();
 
 const PDF = ({ url }: { url: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
