@@ -1,3 +1,4 @@
+import CaseStudyPage from "components/LatteAccordion";
 import AboutMePage from "pages/AboutMePage";
 import HomePage from "pages/HomePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/test" element={<CaseStudyPage />} />
         {/* <Route path="/about-me" element={<AboutMePage />} /> */}
         <Route
           path="*"

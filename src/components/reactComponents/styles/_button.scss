@@ -1,0 +1,25 @@
+.latte-button {
+  background-color: #8c5c3a;
+  color: #f7f1e3;
+  font-weight: bold;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s ease;
+
+  &:hover {
+    background-color: #73482c;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
