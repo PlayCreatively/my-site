@@ -16,7 +16,6 @@ import React, { useState, useEffect } from "react";
 // import PDF from "../components/reactComponents/PDF";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 
 const links = {
   github: "https://github.com/PlayCreatively",
@@ -93,7 +92,7 @@ function HomePage() {
           </div>
         </div>
       </header>
-
+      <p class="text-3xl font-bold underline">Hi</p>
       {/* <PDF url="Work-logs/Visual-Work-Log.pdf" /> */}
       {/* <Canvas id="bg" draw={draw} /> */}
       <div>
@@ -108,42 +107,6 @@ function HomePage() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-      <div id="Drawings">
-        <Swiper
-          space-between="30"
-          centered-slides={true}
-          slides-per-view="1"
-          loop={true}
-          // hash-navigation-watch-state="true"
-        >
-          <PromiseHandler promise={GetImages}>
-            {(images) =>
-              images.map((image, i) => (
-                <SwiperSlide
-                  // data-hash={"img-" + i}
-                  key={"img-" + i}
-                  style={{
-                    alignSelf: "center",
-                    textAlign: "center",
-                  }}
-                >
-                  <img
-                    src={image}
-                    alt={`Drawing ${i}`}
-                    style={{
-                      maxHeight: "100vh",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "0.3vw",
-                    }}
-                  />
-                </SwiperSlide>
-              ))
-            }
-          </PromiseHandler>
-        </Swiper>
-        {/* <ImageGallery urls={GetImages()} /> */}
       </div>
     </div>
   );

@@ -1,24 +1,27 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Fredoka&family=Fredoka+One&family=Indie+Flower&family=Roboto+Slab&family=Sacramento&family=Sansita+Swashed&family=Supermercado+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*
-		cool header text
-	font-family: 'Acme', sans-serif;
-		clean handwriting
-	font-family: 'Caveat', cursive;
-		simplistic round text
-	font-family: 'Fredoka', sans-serif;
+cool header text
+font-family: 'Acme', sans-serif;
+clean handwriting
+font-family: 'Caveat', cursive;
+simplistic round text
+font-family: 'Fredoka', sans-serif;
 		thich round header text
 	font-family: 'Fredoka One', cursive;
 		playful comic sans
-	font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', cursive;
 		clean paragraph text
-	font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif;
 		Stylish handwriting for quoting
-	font-family: 'Sacramento', cursive;
+    font-family: 'Sacramento', cursive;
 		stylish header text
-	font-family: 'Sansita Swashed', cursive;
+    font-family: 'Sansita Swashed', cursive;
 		round title text
-	font-family: 'Supermercado One', cursive;
+    font-family: 'Supermercado One', cursive;
 */
 p {
   color: #f7f0da;
@@ -115,7 +118,7 @@ body {
 .header-intro-container > .name-header {
   background: -webkit-linear-gradient(#ff947c, #ff7251);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #ff8569;
   width: -moz-fit-content;
@@ -132,7 +135,7 @@ body {
 .header-intro-container > .name-header a:hover {
   background: white;
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   cursor: pointer;
 }
 .header-intro-container > .below-header-name {
@@ -213,7 +216,7 @@ a:hover {
 *:has(> a svg) {
   display: flex;
   -moz-column-gap: 0.75em;
-       column-gap: 0.75em;
+  column-gap: 0.75em;
   margin-top: 0.4em;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -241,8 +244,8 @@ a:hover {
   image-rendering: -webkit-optimize-contrast;
   max-width: min(90%, 400px);
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   -webkit-user-drag: none;
   border-radius: 100%;
 }
@@ -293,7 +296,7 @@ a:hover {
 @keyframes Slide-in {
   from {
     -moz-column-gap: 0.2rem;
-         column-gap: 0.2rem;
+    column-gap: 0.2rem;
   }
 }
 @keyframes Fade-in {
@@ -338,8 +341,8 @@ a:hover {
 
 .ImageGallery {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   -webkit-user-drag: none;
   width: 75%;
   margin: auto;
@@ -352,7 +355,7 @@ a:hover {
   max-width: 100%;
   max-height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin: 0% -45%;
   border-radius: 0.3vw;
 }
@@ -398,7 +401,7 @@ a:hover {
   max-width: 100%;
   max-height: 100vh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 0.3vw;
 }
 
@@ -420,7 +423,8 @@ a:hover {
   color: #f7f0da;
   font-size: 2.5rem;
   text-transform: capitalize;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   cursor: pointer;
   display: block;
   width: 100%;
@@ -477,7 +481,11 @@ nav a {
   font-family: sans-serif;
 }
 nav a:hover {
-  background-color: color-mix(in srgb, color-mix(in srgb, #221d1a 93%, white) 85%, black);
+  background-color: color-mix(
+    in srgb,
+    color-mix(in srgb, #221d1a 93%, white) 85%,
+    black
+  );
 }
 
 .ScrollText {
@@ -751,4 +759,69 @@ swiper-container {
   .project-container > * > * {
     grid-template-rows: 2fr 1fr;
   }
-}/*# sourceMappingURL=index.css.map */
+} /*
+---break---
+*/ @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+} /*
+---break---
+*/ @layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
