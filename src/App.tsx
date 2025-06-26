@@ -1,6 +1,7 @@
 import HomePage from "./pages/HomePage";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CaseStudyPage from "./components/case_study_page_p";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/test" element={<CaseStudyPage />} />
         {/* <Route path="/about-me" element={<AboutMePage />} /> */}
         <Route
           path="*"
